@@ -1,0 +1,43 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 3000px;
+    overflow-x: hidden;
+}
+
+.bg_image {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(2px);
+}
+
+.navbar {
+    transition: all 0.4s;
+}
+
+.navbar-scrolled-down {
+    background-color: #595959;
+    opacity: 0.98;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nav-link:hover {
+    font-weight: bolder;
+    transition: 0.3s;
+}
+
+.nav-link:not(:hover) {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#something {
+    margin-top: 1000px;
+}

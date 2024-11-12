@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Question {{ question_num }}</h1>
+<h1>{{ question }}</h1>
+<form method="post" action = {{ url_for("quiztesting") }}>
+    <input class="form-check-input" type="radio" name="answer" value="Good">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
