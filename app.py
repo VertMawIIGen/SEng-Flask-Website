@@ -9,6 +9,10 @@ app.secret_key = os.environ.get('SECRET_KEY')
 def homepage():
     return render_template("home2.html")
 
+@app.route("/base")
+def base():
+    return render_template("base.html")
+
 
 # implement login function
 # do jumbotron with carousel underneath there's a video online
