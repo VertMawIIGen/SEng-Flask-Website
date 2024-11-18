@@ -7,22 +7,82 @@ html {
 
 body {
     overflow-x: hidden;
-    height: fit-content;
+    height: auto;
 }
 
-.bg_image {
-    width: 100vw;
+#container-1 {
+    background-image: url(/static/images/home_image2.png);
+    position: relative;
+    width: 100%;
     height: 100vh;
-    position: absolute;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    filter: blur(2px) brightness(60%);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
+
+.text-within {
+    padding-top: 45vh;
+    animation: something 3s linear forwards;
+}
+
+.text-within #something {
+    position: absolute;
+    color: white;
+    left: 7vw;
+    width: 55%;
+    top: 45vh;
+    font-family: "Exo 2";
+    animation: something 3s linear forwards;
+    text-overflow: "";
+    white-space: nowrap;
+    overflow: hidden;
+    border-bottom: white 5px solid;
+    z-index: 10;
+}
+
+@media (max-width: 850px) {
+    .text-within #something {
+        width: 85%;
+    }
+}
+
+.text-within #something h1 {
+    font-size: calc(16px + 2.5vw);
+}
+
+.text-within #undersomething {
+    padding-top: 3vh;
+    position: absolute;
+    left: 7vw;
+    top: 55vh;
+    color: white;
+    z-index: 1000;
+}
+
+.text-within #undersomething h4 {
+    font-size: calc(10px + 1vw);
+}
+
 
 .navbar {
     transition: all 0.4s;
+    width: 100%;
+    position: fixed;
+    color: white;
+}
+
+.nav-item a {
+    color: beige;
+}
+
+nav {
+    width: 100%;
+    height: 64px;
+}
+
+.navbar .container {
+    width: 100%;
 }
 
 .navbar-scrolled-down {
@@ -34,6 +94,7 @@ body {
 .nav-link:hover {
     font-weight: bolder;
     transition: 0.3s;
+    font-size: large;
 }
 
 .nav-link:not(:hover) {
@@ -41,31 +102,13 @@ body {
     transition: 0.3s;
 }
 
-#something h1 {
-    position: relative;
-    margin-top: 275px;
-    color: white;
-    margin-left: 8%;
-    width: 52%;
-    font-family: "Exo 2";
-    padding-bottom: 0.1%;
-    animation: something 3s linear forwards;
-    text-overflow: "";
-    white-space: nowrap;
-    overflow: hidden;
-    border-bottom: white 5px solid;
-    font-size: 3.7vw;
+
+#something {
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
-
-#undersomething h4 {
-    position: relative;
-    margin-top: 0.65%;
-    color: white;
-    margin-left: 8%;
-    margin-right: 38%;
-    font-size: 2vw;
-}
 
 @keyframes something {
     0% {
@@ -92,17 +135,20 @@ body {
 }
 
 footer {
-    margin-top: 1000px;
+    margin-top: 30vh;
 }
 
 .sections {
     margin-top: 50vh;
-    position: static;
+    position: absolute;
+    overflow: auto;
 }
 
 .information-part {
-    margin-top: calc(30px + 53vh);
-    margin-left: 7%;
+    margin-top: 15vh;
+    padding-left: 7%;
+    width: 100%;
+
 }
 
 .information-part h3 {
@@ -110,22 +156,68 @@ footer {
 }
 
 #codeImage {
-    float: right;
-    max-width: 50%;
+    max-width: 100%;
     height: 75vh;
     overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-right: 10vh;
+
 
 }
 
 #textImage {
-    float: left;
-    width: 40%;
-    padding-right: 2vw;
+    width: 100%;
+    padding-right: 10vw;
     padding-top: 5px;
+}
+
+#imageDiv {
+    text-align: center;
+    margin: auto;
+
 }
 
 .information-part-2 {
     margin-top: 20vh;
+}
+
+#about {
+    position: absolute;
+    margin-top: 8.5vh;
+}
+
+
+#welcomePart {
+    padding-top: 20vh;
+    padding-left: 7vw;
+}
+
+.within-login-info {
+    padding-right: 7%;
+    padding-left: 7%;
+    margin-top: 10vh;
+}
+
+.side-nav {
+    position: sticky;
+    float: left;
+}
+
+#registerForm {
+    position: static;
+    margin-top: 30vh;
+    border: solid 5px black;
+    border-radius: 10px;
+    width: 20%;
+    background-image: linear-gradient(45deg, orange, transparent);
+}
+
+.formField {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+
+#register_page_body {
+    height: auto;
 }

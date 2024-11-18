@@ -13,7 +13,7 @@
 
 <nav class="navbar navbar-expand-sm navbar-dark fixed-top navbar-static">
     <div class="container">
-        <a class="navbar-brand" href="#">SEng Notes</a>
+        <a class="navbar-brand" href="/home">SEng Notes</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,13 +23,13 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Notes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Quizzes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="{{ url_for("logout") }}">LOG OUT</a>
                 </li>
             </ul>
         </div>
@@ -37,8 +37,31 @@
     </div>
 </nav>
 
+{% block content %}
+{% endblock %}
 
+<script>
+    const navElement = document.querySelector(".navbar");
+    window.addEventListener('scroll', () => {
+        if (window.scrollY >= 70) {
+            navElement.classList.add("navbar-scrolled-down");
+        } else if (window.scrollY < 70) {
+            navElement.classList.remove("navbar-scrolled-down");
+        }
 
+    });
+</script>
+
+<div class="footer">
+    <section class="">
+        <footer class="text-center text-white" style="background-color: #0a4275;">
+
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2024 Copyright - Archie Wijaya
+            </div>
+        </footer>
+    </section>
+</div>
 </body>
 </html>
 
