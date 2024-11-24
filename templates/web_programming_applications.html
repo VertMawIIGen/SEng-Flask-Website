@@ -1,0 +1,336 @@
+{% extends 'notes_base.html' %}
+{% block title %}Web Programming Applications | SEng Notes{% endblock %}
+
+{% block content %}
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2" style="position: fixed;">
+                <div id="list-example" class="list-group">
+                    <a class="list-group-item list-group-item-action" href="#title1">Interactive Websites</a>
+                    <a class="list-group-item list-group-item-action" href="#title2">E-commerce</a>
+                    <a class="list-group-item list-group-item-action" href="#title3">Progressive Web Apps</a>
+                </div>
+            </div>
+
+            <div class="col-12" style="padding-left: 20vw;">
+                <h2 style="padding-bottom: 2vh;">Explore the applications of web programming.</h2>
+                <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                     class="scrollspy-example" tabindex="0">
+                    <p>Web Programming is applied universally in many of the technologies that people everywhere
+                        interact with and utilize everyday. Web applications, created through web progrmaming, serve as
+                        the cornerstone for modern, 21st century life as we know it. But before we can understand where
+                        it is applied, we must first understand fundamentally what web programming is used to create:
+                        <strong>interactive websites.</strong></p>
+                    <h4 id="title1" class="title">What even are interactive websites?</h4>
+                    <p>Interactive websites are websites that are designed to produce real-time and engaging experiences
+                        for the user by allowing them to <em> "interact" </em>with the content within the webpage. This
+                        means that, as opposed to static websites, interactive websites are dynamic and respond promptly
+                        to user actions, allowing for a two-way communication between the website and the user. <br>
+                        Interactive websites are widely used in today's world as they simplify the process of building
+                        engagement with users of the website through the showing of personalized and interactions.
+                        Typically, interactive websites contain one or more of the following features:</p>
+                    <table class="table">
+
+
+                        <thead>
+                        <th scope="col">Feature</th>
+                        <th scope="col">Explanation</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>User Interaction</td>
+                            <td>Website elements that encourage interaction, such as buttons, forms and navigation
+                                elements, generate engagement through the user's active participation in using the
+                                website. For instance, the user can enter a form to generate search results for the
+                                specific information that they are searching for.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Media</td>
+                            <td>Dynamic websites often use interactive media such as videos and images in carousels to
+                                further engage users in the website.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dynamic Content</td>
+                            <td>Personalized content allows websites to tailor their experiences to the user through
+                                content such as recommendations, thus making them interactive.
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <p><strong>and many, many more.</strong> These features may seem very familiar for many people,
+                        notably because nearly
+                        everyone in today's world has had experience with them. Many websites utilize these elements,
+                        such as:</p>
+                    <ul>
+                        <li>E-Commerce websites.</li>
+                        <li>Social media websites.</li>
+                        <li>Online learning platforms.</li>
+                    </ul>
+
+                    <p>But in particular, we will be focusing on e-commerce websites.</p>
+                    <h4 id="title2" class="title">All about E-Commerce Websites</h4>
+                    <p>Electronic Commerce, also more commonly known as E-commerce, refers to the concept of trading
+                        good and services over the internet. The term "e-commerce" does not just refer to the trading of
+                        items, rather it also refers more broadly to many aspects of the service, such as the
+                        electronic provision of support services for customers, such as online customer service, the
+                        marketing
+                        and developing of goods, and the delivering of products to purchasers. There are different types
+                        of e-commerce, based on who orders the goods and services, and who sold the goods and
+                        services, they are:</p>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Business-to-Business (B2B) model
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    The B2B model refers to when a business markets and sells goods directly to other
+                                    businesses online. There are different types of B2B companies in the e-commerce
+                                    ecosystem, including:
+                                    <br> <br>
+                                    <ul>
+                                        <li>Manufacturers.
+                                            <ul>
+                                                <li>Companies outsource their production to third party companies, and
+                                                    purchase the required goods through these companies using the B2B
+                                                    model.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Wholesalers
+                                            <ul>
+                                                <li>Wholesalers are companies that sell products in bulk to other
+                                                    companies, such that the other company can sell the products cheaper
+                                                    to consumers.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Distributors
+                                            <ul>
+                                                <li>Distributors refer to companies that sell marketing services to
+                                                    other companies, allowing companies to pay to advertising their
+                                                    products.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Software-as-a-Service Providers
+                                            <ul>
+                                                <li>
+                                                    Software-as-a-Service businesses sell licenses for software hosted
+                                                    on a cloud to other companies, which then require a monthly payment
+                                                    in order for the company to continue using the product.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    An example of the B2B model would be if an electronics company requires a component
+                                    that they don't produce internally. They would then go and buy the component from
+                                    other companies, such as manufacturers.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Business-to-Consumer (B2C) model
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    The B2C model involves the selling of goods and services directly to consumers.
+                                    Currently, this is the most well-known business model, as the general public mostly
+                                    only interact with this e-commerce model. These companies that follow this model
+                                    generally fall into the following categories:<br> <br>
+                                    <ul>
+                                        <li>
+                                            Direct Sellers
+                                            <ul>
+                                                <li>Direct sellers are companies from which consumers directly buy from,
+                                                    purchasing either products of the company's own branding, or from
+                                                    other brands. Consumers make online purchases directly from the
+                                                    seller, with an example of such a company being a retailer such as
+                                                    Target.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Online intermediaries
+                                            <ul>
+                                                <li>Online intermediaries are companies that serve as the bridge between
+                                                    potential consumers and companies. They do not own any of the
+                                                    products or services, only serving as the platform or marketplace
+                                                    for buyers and sellers to come together and interact. An example of
+                                                    such a company is Amazon.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Fee-based Companies
+                                            <ul>
+                                                <li>Fee-based companies sell their software products to consumers using
+                                                    a subscription model. Software-as-a-service businesses use this
+                                                    model, as well as other products such as streaming services, like
+                                                    Netflix.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                    Consumer-to-Business (C2B) model
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    The C2B model involves a consumer offering their products and services to companies,
+                                    with both the company and the consumer benefiting from the relationship. This model
+                                    exists when the consumer creates value, and the business consumes the value. This
+                                    business model is atypical, and not as common as the other business models, as it
+                                    the consumer that offers their products an services to businesses for payment or
+                                    other benefits.
+
+                                    <br><br>
+                                    An example of this would be when a consumer runs a blogging channel,
+                                    and offers to advertise a company's product in exchange for funds.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                    Consumer-to-Consumer (C2C) model
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    The consumer to consumer model facilitates the transaction of goods between
+                                    consumers who want to sell and consumers who want to buy through a third-party
+                                    platform. Companies that follow the C2C model do not sell their own goods, rather
+                                    they only provide a marketplace for consumers to sell their goods. Companies like
+                                    Ebay or Gumtree follow this model of e-commerce.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <p>There is a relationship between B2B and the B2C model, and it is best represented with this
+                        diagram:</p>
+                    <figure style="margin: auto; display: block; margin-left: auto; margin-right: auto; width:70%;">
+                        <img src="/static/images/img_1.png" class="img-fluid">
+                        <figcaption style="font-size: 12px; color: grey">Diagram showing the relationships between the
+                            different companies and business models.
+                        </figcaption>
+                    </figure>
+                    <br>
+                    <p>In today's world, e-commerce has grown very popular, as it provides many advantages compared to
+                        conventional commerce. However, it also has specific downsides associated with it. This is
+                        summed up in the table below.</p>
+                    <table class="table">
+                        <thead>
+                        <th scope="col">Advantages</th>
+                        <th scope="col">Disadvantages</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Marketplaces are available 24/7.</td>
+                            <td>Delivery times are slower compared to physical stores.</td>
+                        </tr>
+                        <tr>
+                            <td>Convenience and speediness for customers as they can easily search and sort for specific
+                                items.
+                            </td>
+                            <td>Consumers have limited experience with the product as they are shopping virtually.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Businesses do not have to spend money on physical infrastructure, making it cheaper than
+                                conventional commerce.
+                            </td>
+                            <td>
+                                Businesses are more vulnerable to malicious hacker attacks as they operate online.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Personalization and product recommendation can encourage more sales and therefore
+                                profits.
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h4 id="title3" class="title">Progressive Web Applications (PWAs)</h4>
+                    <p>Progressive Web Applications (PWAs) are special applications that are, in essence, web
+                        applications that operate similarly to native applications. They can be thought of as a mix
+                        between traditional websites and native applications, combining the accessibility of a website
+                        with the user experience of an application. Now, you might be wondering, what even are webs
+                        application and native applications?</p>
+
+                    <h5>Web Applications</h5>
+                    <p>A web application is an application that is hosted on a web server and can be accessed from a
+                        browser through the internet or an intranet. It is not installed and run on the computer, rather
+                        its processes are executed on a server which the browser communicates with. <br><br> It is
+                        important to note that web applications are distinct from traditional websites. This is because
+                        they have a higher level of complexity and interactivity, and are designed for interaction by
+                        end users, rather than having only static content, which traditional websites have. In web
+                        applicatiions, the user is capable of reading and manipulating data, while in traditional
+                        websites, the user can only read the data available.</p>
+
+                    <h5>Native Applications</h5>
+
+                    <p>Native applications are those developed specifically for a certain operating system. They are
+                        developed in accordance with the nuances of each specific platform, which can include Linux or
+                        windows.</p>
+
+                    <h5>How they relate to PWAs.</h5>
+                    <p>PWAs bridge the gap between the web applications and native applications by providing web
+                        applications with native application functionality, such as sending push notifications and
+                        accessing system resources. They work by using a service worker, which allows PWAs to run in the
+                        background without the need to reside in the browser. When the application is installed, the
+                        service worker, along with the cache, is installed. This allows PWAs to be used offline as the
+                        content is loaded from the cache, with the cache being updated whenever internet access in
+                        available.</p>
+
+                    <figure style="margin: auto; display: block; margin-left: auto; margin-right: auto; width:70%;">
+                        <img src="/static/images/pwa_and_webapps.png" class="img-fluid">
+                        <figcaption style="font-size: 12px; color: grey">Diagram showing the difference between PWAs and
+                            Web Applications.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-toolbar" style="padding-left: 40vw; margin-top: 100px">
+        <button class="btn btn-success" style="text-align: center; left: 50%"><a href="#" style="color: white; text-decoration: none;">➡️ Data Transfers on the Internet</a></button>
+    </div>
+
+{% endblock %}

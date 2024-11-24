@@ -28,13 +28,13 @@ login_manager.login_view = "login"
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-# class depicting the user's data
+# class depicting the user's data in the database
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
     password = db.Column(db.String(80), nullable=False)
 
-
+#creates the form for registering
 class RegisterForm(FlaskForm):
     username = StringField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
     password = PasswordField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Password"})
@@ -45,6 +45,7 @@ class RegisterForm(FlaskForm):
         if existing_user:
             raise ValidationError("That username already exists. Please choose a different one.")
 
+#creates the form for login
 class LoginForm(FlaskForm):
     username = StringField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
     password = PasswordField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Password"})
@@ -62,18 +63,19 @@ def base():
 @app.route("/home", methods=["GET", "POST"])
 @login_required
 def auth_home():
+    session.pop('_flashes', None)
     return render_template("auth_home.html", username=current_user.username)
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
+    if form.validate_on_submit(): # check if user submitted the form
+        user = User.query.filter_by(username=form.username.data).first() #check username validity
         if user:
-            if bcrypt.check_password_hash(user.password, form.password.data):
+            if bcrypt.check_password_hash(user.password, form.password.data): # check hashed password
                 login_user(user)
-                return redirect(url_for('auth_home', username=form.username.data))
-
+                flash("Login successful.")
+                return redirect(url_for('auth_home', username=form.username.data)) # return homepage
         flash("Failed to login.")
         return render_template('login.html', form=form)
     return render_template("login.html", form = form)
@@ -94,6 +96,7 @@ def register():
         new_user = User(username=form.username.data, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
+        flash("Register successful.")
         return redirect(url_for('login'))
 
     return render_template("register.html", form = form)
@@ -121,10 +124,10 @@ def quiztesting():
             return render_template("feedback.html", feedback=feedback)
     return render_template("quiztesting.html", question=question, question_num=question_index + 1)
 
-@app.route("/testering")
+@app.route("/web_programming")
 @login_required
-def testering():
-    return render_template("auth_notes.html")
+def web_programming():
+    return render_template("web_programming_applications.html")
 
 if __name__ == '__main__':
     app.run()

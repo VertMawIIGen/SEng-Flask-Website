@@ -11,64 +11,28 @@
 </head>
 <body id="register_page_body">
 
-<nav class="navbar navbar-expand navbar-dark fixed-top navbar-scrolled-down">
-    <div class="container">
-        <a class="navbar-brand" href="#">SEng Notes</a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavigation"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNavigation">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for("login") }}">Login</a>
-                </li>
-            </ul>
-        </div>
+<div class="register_content">
+    <div class="left_content">
     </div>
-</nav>
-
-<div class="container h-100 text-center" id="registerForm">
-    <div class="row align-items-center">
-        <div class="col-12 align-self-center">
-            <h3 style="align-content: center">Register Here</h3>
+    <div class="right_content">
+        <h3 style="text-align: center">Register Here</h3>
+        <div class="container register_form">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                {{ form.username(class_="formField") }}
+                {{ form.password(class_="formField") }}
+                {{ form.submit(class_="formField") }}
+            </form>
         </div>
-        <form method="POST" action="">
-            {{ form.hidden_tag() }}
-            <div class="row">
-                <div class="col-12">
-                    {{ form.username(class_="formField") }}
-                </div>
-                <div class="col-12">
-                    {{ form.password(class_="formField") }}
-                </div>
-                <div class="col-12">
-                    {{ form.submit(class_="formField") }}
-                </div>
-            </div>
-        </form>
         {# shows all errors generated raised by the class#}
-        {% for field, errors in form.errors.items() %}
-            <div class="alert alert-error">
-                {{ form[field].label }}: {{ ', '.join(errors) }}
-            </div>
-        {% endfor %}
-
-        <p>Already have an account? <a href="{{ url_for("login") }}">Login here.</a></p>
+            {% for field, errors in form.errors.items() %}
+                <div class="alert alert-error alert_thing">
+                    {{ form[field].label }}: {{ ', '.join(errors) }}
+                </div>
+            {% endfor %}
+        <p style="text-align: center;"><em>Already have an account? <a href="{{ url_for("login") }}">Login here.</a></em></p>
     </div>
 </div>
 
-<div class="footer">
-    <section class="">
-        <footer class="text-center text-white" style="background-color: #0a4275;">
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2024 Copyright - Archie Wijaya
-            </div>
-        </footer>
-    </section>
-
-</div>
 </body>
 </html>
