@@ -1,15 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Question {{ question_num }}</h1>
-<h1>{{ question }}</h1>
-<form method="post" action = {{ url_for("quiztesting") }}>
-    <input class="form-check-input" type="radio" name="answer" value="Good">
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Quizzicality | SEng Notes {% endblock %}
+
+{% block content %}
+    <body style="margin-top: 20vh; height: 100%;">
+    <div style="padding-left: 10vw">
+        <h2>Question {{ question_num }}</h2>
+        <br><br>
+        <h3>{{ question }}</h3>
+        <form method="post" action= {{ url_for("firstquiz") }}>
+            <div style="margin-bottom: 30px;">
+                {% for option in options %}
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" value="{{ loop.index0 }}"
+                               id="{{ option }}">
+                        <label class="form-check-label" for="{{ option }}">{{ option }}</label>
+                    </div>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    </body>
+{% endblock %}

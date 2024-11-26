@@ -138,6 +138,7 @@ footer {
     margin-top: 20vh;
 }
 
+
 .sections {
     margin-top: 50vh;
     position: absolute;
@@ -207,14 +208,29 @@ footer {
 }
 
 .left_content {
-    background-image: url("/static/images/registration.jpg");
-    background-size: contain;
-    background-position: 40px, 40px, top, center;
+    background-image: url("/static/images/login_page.png");
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 1000px 0 rgba(0, 0, 0, 0.19);
+    background-repeat: no-repeat;
+    background-position: 0px, 40px, top, center;
     width: 45%;
     display: block;
     float: left;
     height: 100vh;
 }
+
+.left_content_register {
+    background-image: url("/static/images/registration.jpg");
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 1000px 0 rgba(0, 0, 0, 0.19);
+    background-repeat: no-repeat;
+    background-position: 0px, 40px, top, center;
+    width: 45%;
+    display: block;
+    float: left;
+    height: 100vh;
+}
+
 .right_content {
     position: relative;
     align-content: end;

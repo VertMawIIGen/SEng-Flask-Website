@@ -1,80 +1,124 @@
 {% extends 'notes_base.html' %}
-{% block title %}Web Programming Applications | SEng Notes{% endblock %}
+{% block title %}Data Transfer on the Internet | SEng Notes{% endblock %}
 
 {% block content %}
-
 
 
     <div class="container">
         <div class="row">
             <div class="col-2" style="position: fixed;">
                 <div id="list-example" class="list-group">
-                    <a class="list-group-item list-group-item-action" href="#title1">Interactive Websites</a>
-                    <a class="list-group-item list-group-item-action" href="#title2">E-commerce</a>
-                    <a class="list-group-item list-group-item-action" href="#title3">Progressive Web Apps</a>
+                    <a class="list-group-item list-group-item-action" href="#title1">Data Packets</a>
+                    <a class="list-group-item list-group-item-action" href="#title2">Web Protocols</a>
+                    <a class="list-group-item list-group-item-action" href="#title3">Internet Protocol</a>
+                    <a class="list-group-item list-group-item-action" href="#title4">Domain Name Systems</a>
                 </div>
             </div>
 
             <div class="col-12" style="padding-left: 20vw;">
-                <h2 style="padding-bottom: 2vh;">Explore the applications of web programming.</h2>
+                <h2 style="padding-bottom: 2vh;">Investigate how data is transferred over the internet.</h2>
                 <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
                      class="scrollspy-example" tabindex="0">
-                    <p>Web Programming is applied universally in many of the technologies that people everywhere
-                        interact with and utilize everyday. Web applications, created through web progrmaming, serve as
-                        the cornerstone for modern, 21st century life as we know it. But before we can understand where
-                        it is applied, we must first understand fundamentally what web programming is used to create:
-                        <strong>interactive websites.</strong></p>
-                    <h4 id="title1" class="title">What even are interactive websites?</h4>
-                    <p>Interactive websites are websites that are designed to produce real-time and engaging experiences
-                        for the user by allowing them to <em> "interact" </em>with the content within the webpage. This
-                        means that, as opposed to static websites, interactive websites are dynamic and respond promptly
-                        to user actions, allowing for a two-way communication between the website and the user. <br>
-                        Interactive websites are widely used in today's world as they simplify the process of building
-                        engagement with users of the website through the showing of personalized and interactions.
-                        Typically, interactive websites contain one or more of the following features:</p>
+                    <p>You may not realize it, but on average, roughly one petabyte of data is actively being
+                        transferred over the internet every second (that's about <em>one million gigabytes</em>). With
+                        this much data, it is paramount that there is a way to ensure that data is being transferred
+                        reliably, accurately and in a timely manner. But before we can worry about that, we also have to
+                        know where the data is even going. These are the jobs of data packets and IP addresses
+                        respectively, and they are discussed right below.
+                    </p>
+                    <h4 id="title1" class="title">What are data packets?</h4>
+                    <p>A data packet is a small portion of data taken from a larger file that is transmitted from one
+                        device to another via a network,
+                        such as the internet. Data packets are used to break down large files into smaller, more
+                        manageable units that can be sent in any order and reassembled by the receiver's device at the
+                        destination,
+                        also known as the <em>endpoint</em>.
+                        Alongside the transported data (also known as the <strong>payload</strong>), most data transfer
+                        protocols also send a packet header, which
+                        contains metadata specifying the receiver's IP address, the protocol used to transfer the
+                        data, and other relevant information, such as the origin, content and destination of the data.
+                        <br> <br>
+
+                        While it is theoretically possible to transfer files as one continuous stream of data using a
+                        method called circuit switching, such a
+                        solution is impractical in computer networks, which are groups of two or more connected
+                        computers.
+                        Without breaking down the files, computers within the network would need to take turns to
+                        receive and transmit data, making it exponentially slower the more devices there are in the
+                        network and thus impractical for the operation of the internet.
+
+                        <br><br>
+
+                        Therefore, data packets are used in order to allow
+                        multiple computers to simultaneously receive data by reducing the size of the data transferred
+                        at one time and making each packet independent of one another such that data from different
+                        devices can be transferred at the same on the same infrastructure, thereby making it faster and
+                        more efficient for the many devices on the internet. The way that this
+                        can be achieved is by using a technique called <strong>packet switching</strong>.
+
+                        <br> <br>
+
+                        Packet switching is a data transmission method in which a message is broken into a number of
+                        parts (which are the data packets) and then sent independently, over whatever route is optimum
+                        for each packet, and reassembled at the destination. In the context of the internet (which is in
+                        essence a network of networks), packets travel through various network nodes, such as routers
+                        and switches, and arrives at its intended location. By allowing packets to be transferred at
+                        their optimum routes, this reduces the overall strain on network infrastructure and hastens the
+                        data transfer process, as packets are able to be routed around congested networks, leading to a
+                        more efficient usage of network resources. Packet switching allows multiple devices to transfer
+                        and use the network infrastructure as packets can be processed independent to one another,
+                        allowing the network nodes to facilitate connections with multiple devices at once.
+
+
+                        <br> <br>
+                        Packet switching forms the basis of the modern protocol used in data transmissions today, called
+                        the TCP/IP protocol. The Transmission Control Protocol is responsible for assembling the packets
+                        in
+                        the right order and ensuring accuracy of transmission, and the Internet Protocol is responsible
+                        for allowing communications to exist
+                        between devices on the internet (more regarding them below).
+
+                        Thus, to recap the main ideas of this section are:
+                    </p>
                     <table class="table">
-
-
                         <thead>
-                        <th scope="col">Feature</th>
-                        <th scope="col">Explanation</th>
+                        <th scope="col">Key Information</th>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>User Interaction</td>
-                            <td>Website elements that encourage interaction, such as buttons, forms and navigation
-                                elements, generate engagement through the user's active participation in using the
-                                website. For instance, the user can enter a form to generate search results for the
-                                specific information that they are searching for.
+                            <td>Data packets are smaller portions of a larger piece of data.
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>Data packets form part of the concept of packet switching, which is the method in which data
+                                packets are sent independent of one another and then reassembled to form the
+                                original data at the endpoint.
                             </td>
                         </tr>
                         <tr>
-                            <td>Media</td>
-                            <td>Dynamic websites often use interactive media such as videos and images in carousels to
-                                further engage users in the website.
+                            <td>The advantage of packet switching is that transmission infrastructure is more
+                                efficiently utilized as packets are capable of choosing the most optimal path to their
+                                destination, leading to faster, more reliable transmissions as data avoids congested
+                                networks.
                             </td>
                         </tr>
                         <tr>
-                            <td>Dynamic Content</td>
-                            <td>Personalized content allows websites to tailor their experiences to the user through
-                                content such as recommendations, thus making them interactive.
+                            <td>Packet switching also contrasts with circuit switching in that it can facilitate the
+                                simultaneous connection of multiple devices across the same network infrastructure,
+                                making it ideal for the large amounts of systems on the internet.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Packet switching forms the basis of the Transmission Control Protocol / Internet
+                                Protocol (TCP/IP) protocols, where TCP is responsible for the assembly of data at the
+                                endpoint and IP is responsible for the communication between devices on the internet.
                             </td>
                         </tr>
                         </tbody>
                     </table>
 
-                    <p><strong>and many, many more.</strong> These features may seem very familiar for many people,
-                        notably because nearly
-                        everyone in today's world has had experience with them. Many websites utilize these elements,
-                        such as:</p>
-                    <ul>
-                        <li>E-Commerce websites.</li>
-                        <li>Social media websites.</li>
-                        <li>Online learning platforms.</li>
-                    </ul>
-
-                    <p>But in particular, we will be focusing on e-commerce websites.</p>
-                    <h4 id="title2" class="title">All about E-Commerce Websites</h4>
+                    <h4 id="title2" class="title">An Overview of the Common Web Protocols</h4>
                     <p>Electronic Commerce, also more commonly known as E-commerce, refers to the concept of trading
                         good and services over the internet. The term "e-commerce" does not just refer to the trading of
                         items, rather it also refers more broadly to many aspects of the service, such as the
@@ -324,13 +368,16 @@
                             Web Applications.
                         </figcaption>
                     </figure>
+                    <h4 id="title4" class="title">What are Domain Name Systems (DNS)?</h4>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="btn-toolbar" style="padding-left: 40vw; margin-top: 100px">
-        <button class="btn btn-success" style="text-align: center; left: 50%"><a href="{{ url_for("data_transfers") }}" style="color: white; text-decoration: none;">➡️ Data Transfers on the Internet</a></button>
+        <button class="btn btn-success" style="text-align: center; left: 50%"><a href="#"
+                                                                                 style="color: white; text-decoration: none;">➡️
+            Data Transfers on the Internet</a></button>
     </div>
 
 {% endblock %}

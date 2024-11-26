@@ -6,6 +6,7 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
 import os
+import csv
 
 # put comments for the login function
 
@@ -14,8 +15,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = "24352afjhljaskdf"
 
-
 app.secret_key = os.environ.get('SECRET_KEY')
+
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
@@ -24,9 +25,19 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
 
+all_questions = []
+with open("static/quizzes/quiztesting.csv") as f:
+    for row in csv.reader(f):
+        all_questions.append(row)
+
+# to show which questions the person got wrong
+questions_correct = []
+
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
 
 # class depicting the user's data in the database
 class User(db.Model, UserMixin):
@@ -34,7 +45,8 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), unique=True, nullable=False)
     password = db.Column(db.String(80), nullable=False)
 
-#creates the form for registering
+
+# creates the form for registering
 class RegisterForm(FlaskForm):
     username = StringField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
     password = PasswordField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Password"})
@@ -45,11 +57,14 @@ class RegisterForm(FlaskForm):
         if existing_user:
             raise ValidationError("That username already exists. Please choose a different one.")
 
-#creates the form for login
+
+# creates the form for login
 class LoginForm(FlaskForm):
     username = StringField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
     password = PasswordField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Password"})
     submit = SubmitField("Login")
+
+
 @app.route('/')
 def homepage():
     return render_template("home2.html")
@@ -66,19 +81,21 @@ def auth_home():
     session.pop('_flashes', None)
     return render_template("auth_home.html", username=current_user.username)
 
+
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    if form.validate_on_submit(): # check if user submitted the form
-        user = User.query.filter_by(username=form.username.data).first() #check username validity
+    if form.validate_on_submit():  # check if user submitted the form
+        user = User.query.filter_by(username=form.username.data).first()  # check username validity
         if user:
-            if bcrypt.check_password_hash(user.password, form.password.data): # check hashed password
+            if bcrypt.check_password_hash(user.password, form.password.data):  # check hashed password
                 login_user(user)
                 flash("Login successful.")
-                return redirect(url_for('auth_home', username=form.username.data)) # return homepage
+                return redirect(url_for('auth_home', username=form.username.data))  # return homepage
         flash("Failed to login.")
         return render_template('login.html', form=form)
-    return render_template("login.html", form = form)
+    return render_template("login.html", form=form)
+
 
 @app.route("/logout", methods=['GET', 'POST'])
 @login_required
@@ -86,11 +103,12 @@ def logout():
     logout_user()
     return redirect(url_for('homepage'))
 
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
 
-    #hashing the password and creating the new user
+    # hashing the password and creating the new user
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         new_user = User(username=form.username.data, password=hashed_password)
@@ -99,35 +117,51 @@ def register():
         flash("Register successful.")
         return redirect(url_for('login'))
 
-    return render_template("register.html", form = form)
+    return render_template("register.html", form=form)
 
-# code for quizzes
-@app.route("/quiztesting", methods=["GET", "POST"])
+@app.route("/quiz1", methods=["GET", "POST"])
 @login_required
-def quiztesting():
-    questions = ["This is the question", "Question number 2"]
-    question_index = session.get("question_index", 0)
-    if question_index >= len(questions):
+def firstquiz():
+    question_index = session.get("question_index", 1)
+    if question_index >= len(all_questions):
         session["question_index"] = 0
-        return redirect(url_for("homepage"))
-    session["score"] = 0
+        return redirect(url_for("results"))
 
-    question = questions[question_index]
+    if session.get("score", None) == None:
+        session["score"] = 0
+
+    current_question = all_questions[question_index]
+    allOptions = [current_question[1], current_question[2], current_question[3], current_question[4]]
+
     if request.method == "POST":
-        selected_answer = request.form.get("answer")
+        selected_answer = int(request.form.get("answer"))
+        user_answer = chr(selected_answer + 65)
         session["question_index"] = question_index + 1
-        if selected_answer == "bad":
-            session["score"] += 1
-            return redirect(url_for("quiztesting"))
+        if user_answer != current_question[5]:
+            return render_template("feedback.html", feedback=f"Correct Answer is {current_question[5]}")
         else:
-            feedback = f"Wrong answer."
-            return render_template("feedback.html", feedback=feedback)
-    return render_template("quiztesting.html", question=question, question_num=question_index + 1)
+            session["score"] += 1
+            return redirect(url_for("firstquiz"))
+    print(session["score"])
+    return render_template("quiztesting.html", question=current_question[0], options=allOptions, question_num=question_index)
+
+
+@app.route("/results", methods=["GET", "POST"])
+def results():
+    current_score = session.get("score")
+    return f"Your score is {current_score}"
 
 @app.route("/web_programming")
 @login_required
 def web_programming():
     return render_template("web_programming_applications.html")
+
+
+@app.route("/data_transfers")
+@login_required
+def data_transfers():
+    return render_template("data_transfer.html")
+
 
 if __name__ == '__main__':
     app.run()
