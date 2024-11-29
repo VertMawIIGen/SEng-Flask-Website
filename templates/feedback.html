@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{{ feedback }}
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+    <div class="feedback container content" style="margin-top:50vh; padding-bottom: 25vh;">
+        <h2>{{ feedback }}</h2>
+        <button><a href={{ url_for("firstquiz") }}>Continue to next question.</a></button>
+    </div>
+{% endblock %}

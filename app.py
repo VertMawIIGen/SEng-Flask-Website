@@ -30,8 +30,7 @@ with open("static/quizzes/quiztesting.csv") as f:
     for row in csv.reader(f):
         all_questions.append(row)
 
-# to show which questions the person got wrong
-questions_correct = []
+
 
 
 @login_manager.user_loader
@@ -44,6 +43,7 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
     password = db.Column(db.String(80), nullable=False)
+
 
 
 # creates the form for registering
@@ -79,7 +79,9 @@ def base():
 @login_required
 def auth_home():
     session.pop('_flashes', None)
-    return render_template("auth_home.html", username=current_user.username)
+    if session.get("score", None) == None:
+        session["score"] = 0
+    return render_template("auth_home.html", username=current_user.username, score=session.get("latest_score", None))
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -124,11 +126,14 @@ def register():
 def firstquiz():
     question_index = session.get("question_index", 1)
     if question_index >= len(all_questions):
-        session["question_index"] = 0
+        session["question_index"] = 1
         return redirect(url_for("results"))
 
     if session.get("score", None) == None:
         session["score"] = 0
+
+    if session.get("questions_correct", None) == None:
+        session["questions_correct"] = []
 
     current_question = all_questions[question_index]
     allOptions = [current_question[1], current_question[2], current_question[3], current_question[4]]
@@ -138,9 +143,11 @@ def firstquiz():
         user_answer = chr(selected_answer + 65)
         session["question_index"] = question_index + 1
         if user_answer != current_question[5]:
+            session["questions_correct"].append(False)
             return render_template("feedback.html", feedback=f"Correct Answer is {current_question[5]}")
         else:
             session["score"] += 1
+            session["questions_correct"].append(True)
             return redirect(url_for("firstquiz"))
     print(session["score"])
     return render_template("quiztesting.html", question=current_question[0], options=allOptions, question_num=question_index)
@@ -149,7 +156,12 @@ def firstquiz():
 @app.route("/results", methods=["GET", "POST"])
 def results():
     current_score = session.get("score")
-    return f"Your score is {current_score}"
+    session["latest_score"] = current_score
+    session["score"] = 0
+    print(session["questions_correct"])
+    correct_questions = session["questions_correct"]
+    session["questions_correct"] = []
+    return render_template("quiz_results.html", score=current_score, corrects=correct_questions)
 
 @app.route("/web_programming")
 @login_required
@@ -161,6 +173,11 @@ def web_programming():
 @login_required
 def data_transfers():
     return render_template("data_transfer.html")
+
+@app.route("/web_security")
+@login_required
+def web_security():
+    return render_template("web_security.html")
 
 
 if __name__ == '__main__':

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+    <body style="margin-top: 20vh; height: 100%;">
+    <div style="padding-left: 10vw">
+        <h2>You got {{ score }} out of 10.</h2>
+        <table class="table">
+            <thead>
+            <th scope="col">Question</th>
+            <th scope="col">Answered</th>
+            </thead>
+            <tbody>
+            {% for answer in corrects %}
+                <tr><td>
+                    {{ loop.index }}
+                </td>
+                <td>
+                    {% if answer %}
+                        Correct
+                    {% else %}
+                        Incorrect
+                    {% endif %}
+                </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="information-part">
+        <button><a href={{ url_for("auth_home") }}>Return home?</a></button>
+    </div>
+    </body>
+{% endblock %}
+
