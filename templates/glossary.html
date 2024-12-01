@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}Glossary | SEng Notes{% endblock %}
+
+{% block content %}
+    <div class="container" style="margin-top:20vh">
+        <h2>Glossary</h2>
+        <br><br>
+        <table class="table">
+            <thead>
+                <th scope="col">Word</th>
+                <th scope="col">Definition</th>
+            </thead>
+            <tbody>
+            {% for word in word_list %}
+            <tr>
+                <td>{{ word[0] }}</td>
+                <td>{{ word[1] }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    <button><a href="#">Back to Top</a></button>
+    </div>
+{% endblock %}

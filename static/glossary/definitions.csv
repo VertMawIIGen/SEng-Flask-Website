@@ -1,0 +1,16 @@
+Interactive Websites; Interactive websites are websites that are designed to produce real-time and engaging experiences for the user by allowing them to "interact" with the content within the webpage.
+E-Commerce; E-Commerce is the purchasing, selling and exchanging of goods and services through internet-based platforms, also encompassing the marketing, support, development and delivery of goods.
+Progressive Web Applications; Progressive Web Applications (PWAs) are web applications that are designed to be able to run similar to a native application in that it can send notifications and access system resources in order to run in the background.
+Web Applications; Web applications are applications hosted on a web server that can be accessed through the internet via the user's browser. All processes are executed on the server.
+Native Applications; Native applications are applications that are developed specifically for a particular operating system and require the user to download to utilize.
+Endpoint; An endpoint refers to a specific device or node that connects to a network and is the target for a data transfer.
+Payload; A payload refers to the section of a data packet that contains the actual data that it is sending.
+Data Packets; Data packets are small portions of a larger file that is used to transmit information from one side to another via a network, such as the internet. Typically, it contains a header, a trailer, and the payload.
+Packet Switching; Packet switching is a data transmission method where data is broken down into data packets and sent independently to the endpoint.
+Routers; Routers are networking devices that manage the flow of the data packets for one or more packet switched networks.
+Switches; Switches are devices that connects devices together to form a network.
+IP Address; IP addresses are unique strings of characters (that consists of 4 8 bit numbers separated by dots in IPv4) that serves as a unique identifier for every device that connects to the internet, such that data can be easily transferred to the particular device.
+Domain Name; Domain names are human-readable addresses that are used to uniquely identify a specific website.
+Domain Name System (DNS); Domain Name System (DNS) is a method that is used to translate domain names into IP addresses, through a process called DNS resolution, such that the device can communicate with the web server.
+Recursive Servers; Recursive servers query authoritative servers on behalf to the end user in order to find the IP address that is correlated to a domain name.
+Authoritative Servers; Authoritative servers contain the actual information regarding the IP address that maps to the domain name.

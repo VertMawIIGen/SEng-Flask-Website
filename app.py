@@ -30,7 +30,10 @@ with open("static/quizzes/quiztesting.csv") as f:
     for row in csv.reader(f):
         all_questions.append(row)
 
-
+all_words = []
+with open("static/glossary/definitions.csv") as f:
+    for row in csv.reader(f, delimiter=';'):
+        all_words.append(row)
 
 
 @login_manager.user_loader
@@ -67,7 +70,7 @@ class LoginForm(FlaskForm):
 
 @app.route('/')
 def homepage():
-    return render_template("home2.html")
+    return render_template("front_page.html")
 
 
 @app.route("/base")
@@ -178,6 +181,23 @@ def data_transfers():
 @login_required
 def web_security():
     return render_template("web_security.html")
+
+@app.route("/big_data_accessibility")
+@login_required
+def big_data_accessibility():
+    return render_template("big_data_accessibility.html")
+
+@app.route("/web_development")
+@login_required
+def web_development():
+    return render_template("frameworks_web_dev.html")
+
+
+@app.route("/glossary")
+@login_required
+def glossary():
+    print(all_words)
+    return render_template("glossary.html", word_list=all_words)
 
 
 if __name__ == '__main__':
