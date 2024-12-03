@@ -20,7 +20,7 @@
             <div class="carousel-item active">
                 <div class="card-group">
                     <div class="card">
-                        <img src="/static/images/applications.png" class="card-img-top" alt="...">
+                        <img src="/static/images/applications.png" class="card-img-top" alt="Illustration of a monitor with websites coming out of it.">
                         <div class="card-body">
                             <h5 class="card-title"><a style="text-decoration: none; color: black;"
                                                       class="stretched-link" href={{ url_for("web_programming") }}>Explore
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="/static/images/computer-transfer.jpg" class="card-img-top" alt="...">
+                        <img src="/static/images/computer-transfer.jpg" class="card-img-top" alt="Illustration depicting 2 monitor with white datalink beams connecting them">
                         <div class="card-body">
                             <h5 class="card-title"><a style="text-decoration: none; color: black;"
                                                       class="stretched-link" href={{ url_for("data_transfers") }}>Investigate
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="/static/images/security.jpg" class="card-img-top" alt="...">
+                        <img src="/static/images/security.jpg" class="card-img-top" alt="A keycap with the words web security written on it">
                         <div class="card-body">
                             <h5 class="card-title"><a style="text-decoration: none; color: black;"
                                                       class="stretched-link" href={{ url_for("web_security") }}>Explain
@@ -59,19 +59,19 @@
             <div class="carousel-item">
                 <div class="card-group">
                     <div class="card">
-                        <img src="/static/images/server%20room.jpg" class="card-img-top" alt="...">
+                        <img src="/static/images/server%20room.jpg" class="card-img-top" alt="A render of a server room">
                         <div class="card-body">
                             <h5 class="card-title"><a style="text-decoration: none; color: black;"
                                                       class="stretched-link"
                                                       href={{ url_for("big_data_accessibility") }}>Big Data and Web
                                 Accessibility</a></h5>
-                            <p class="card-text">The influence of big data and web accessibility intiatives is discussed
+                            <p class="card-text">The influence of big data and web accessibility initiatives are discussed
                                 here, alongside how CSS impacts our web browsing experiences.</p>
                             <p class="card-text"><small class="text-muted">Updated 12/01/24</small></p>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="/static/images/framework.jpg" class="card-img-top" alt="...">
+                        <img src="/static/images/framework.jpg" class="card-img-top" alt="An image depicting the logos of the most common web development frameworks">
                         <div class="card-body">
                             <h5 class="card-title"><a style="text-decoration: none; color: black;"
                                                       class="stretched-link" href={{ url_for("web_development") }}>Frameworks,
@@ -82,13 +82,13 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="/static/images/dictionary.jpg" class="card-img-top" alt="...">
+                        <img src="/static/images/dictionary.jpg" class="card-img-top" alt="An image of a dictionary page">
                         <div class="card-body">
                             <h5 class="card-title"><a style="text-decoration: none; color: black;"
                                                       class="stretched-link" href={{ url_for("glossary") }}>Glossary</a>
                             </h5>
                             <p class="card-text">A useful collection of all significant terms within this topic.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <p class="card-text"><small class="text-muted">Updated 12/02/24</small></p>
                         </div>
                     </div>
                 </div>
@@ -115,11 +115,11 @@
             <thead>
             <tr>
                 <td>Quiz</td>
-                <td>Score</td>
+                <td>Latest Score</td>
             </tr>
             </thead>
             <tr>
-                <td><a href={{ url_for("firstquiz") }}, class="link_anim">Topic Review: Programming for the Web</a></td>
+                <td><a href={{ url_for("firstquiz") }} class="link_anim">Topic Review: Programming for the Web</a></td>
                 <td>{{ score }}</td>
             </tr>
         </table>

@@ -14,3 +14,25 @@ Domain Name; Domain names are human-readable addresses that are used to uniquely
 Domain Name System (DNS); Domain Name System (DNS) is a method that is used to translate domain names into IP addresses, through a process called DNS resolution, such that the device can communicate with the web server.
 Recursive Servers; Recursive servers query authoritative servers on behalf to the end user in order to find the IP address that is correlated to a domain name.
 Authoritative Servers; Authoritative servers contain the actual information regarding the IP address that maps to the domain name.
+Encryption;Encryption is the process of altering data into a form that can only be read by the intended individuals.
+Plaintext;Plaintext refers to unmodified data that can be read directly by devices or humans without the need to decrypt.
+Encryption Key;An encryption key is a string of characters or numbers that is used by encryption algorithms to encrypt and decrypt data in a way that is unique to the specific string, meaning that users require the same exact string in order to correctly read encrypted data.
+Encryption algorithm; The encryption algorithm is a algorithm that is used to convert plaintext into ciphertext and back into plaintext through the use of the encryption key.
+Symmetric encryption algorithms; Encryption algorithms that use the same key for both the encryption and decryption process.
+Asymmetric encryption; Encryption algorithms that use two keys, one for decryption (private key) and the other for decryption (public key).
+Authentication;Authentication is the process of verifying the identity of a user or entity, in order to ensure that the person attempting to access the system is the correct person, and not a malicious individual pretending to be the real user.
+Authorization;Authorization is the process of ensuring that an already authenticated user has the ability to perform a specific action or view a specific resource within the web server.
+Digital signatures;Digital signatures are documents that provide irrefutable evidence that a sender sent them as they are encrypted using the sender's private key.
+Hash function; hash function is a one-way function that maps data of an arbitrary size to a fixed length set of values, known as a hash value.
+Big data;Big data refers to data sets that are too large and complex for traditional database solutions to handle effectively.
+Structured Data;Structured data refers to highly organized information whose trends can be easily identified and the relevant data searched.
+Unstructured data;Unstructured data refers to disorganized data that contains no predefined structure, making it a challenge for software to identify trends and search for specific data.
+Data mining;Data mining is the process of sorting through large data sets to identify hidden patterns and relationships that can be used by businesses to make informed decisions and predictions.
+Metadata;Metadata is data that describes other data.
+Internationalization;Internationalization refers to the designing of web application to function in different languages and cultural contexts.
+Cross Site Scripting; Cross Site Scripting is an attack that uses the web server in order to relay the attacker’s commands, allowing them to execute malicious code if the victim visits a link containing the hacker’s code, or visits a resource in the webpage which the attacker has infected.
+Cross-site Request Forgery (CSRF);Cross-site Request Forgery (CSRF) is an exploit technique that involves deceiving an authenticated user to perform an unwanted action on a trusted site, exploiting their current authenticated state to perform actions that require the user to authenticate themselves prior to doing the action.
+Interoperability;Interoperability between web applications refers to the ability for web applications to work together with other systems or applications.
+Version Control;Version control is the practice of tracking and managing changes to software code, made possible through the use of version control systems (VCS).
+Frameworks;Frameworks are a set of pre-written code that serves as the structure on which the code can be incorporated in order to create a new web application.
+Rendering Engines; Rendering engines are responsible for interpreting the HTML, CSS and other files sent by the server into their visual representations that users see on the screen.

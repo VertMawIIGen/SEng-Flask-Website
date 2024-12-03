@@ -16,11 +16,11 @@
             </div>
 
             <div class="col-12" style="padding-left: 20vw;">
-                <h2 style="padding-bottom: 2vh;">Explore the applications of web programming.</h2>
+                <h2 style="padding-bottom: 2vh;">1. Explore the applications of web programming.</h2>
                 <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
                      class="scrollspy-example" tabindex="0">
                     <p>Web Programming is applied universally in many of the technologies that people everywhere
-                        interact with and utilize everyday. Web applications, created through web progrmaming, serve as
+                        interact with and utilize every day. Web applications, created through web programming, serve as
                         the cornerstone for modern, 21st century life as we know it. But before we can understand where
                         it is applied, we must first understand fundamentally what web programming is used to create:
                         <strong>interactive websites.</strong></p>
@@ -154,8 +154,8 @@
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     The B2C model involves the selling of goods and services directly to consumers.
-                                    Currently, this is the most well-known business model, as the general public mostly
-                                    only interact with this e-commerce model. These companies that follow this model
+                                    Currently, this is the most well-known business model, as the public mostly
+                                    only interacts with this e-commerce model. These companies that follow this model
                                     generally fall into the following categories:<br> <br>
                                     <ul>
                                         <li>
@@ -209,7 +209,7 @@
                                     with both the company and the consumer benefiting from the relationship. This model
                                     exists when the consumer creates value, and the business consumes the value. This
                                     business model is atypical, and not as common as the other business models, as it
-                                    the consumer that offers their products an services to businesses for payment or
+                                    the consumer that offers their products a services to businesses for payment or
                                     other benefits.
 
                                     <br><br>
@@ -242,7 +242,7 @@
                     <p>There is a relationship between B2B and the B2C model, and it is best represented with this
                         diagram:</p>
                     <figure style="margin: auto; display: block; margin-left: auto; margin-right: auto; width:70%;">
-                        <img src="/static/images/img_1.png" class="img-fluid">
+                        <img src="/static/images/img_1.png" class="img-fluid" alt="An illustration of the relationship between the different companies and business models">
                         <figcaption style="font-size: 12px; color: grey">Diagram showing the relationships between the
                             different companies and business models.
                         </figcaption>
@@ -290,7 +290,7 @@
                     <p>Progressive Web Applications (PWAs) are special applications that are, in essence, web
                         applications that operate similarly to native applications. They can be thought of as a mix
                         between traditional websites and native applications, combining the accessibility of a website
-                        with the user experience of an application. Now, you might be wondering, what even are webs
+                        with the user experience of an application. Now, you might be wondering: what even are webs
                         application and native applications?</p>
 
                     <h5>Web Applications</h5>
@@ -319,18 +319,50 @@
                         available.</p>
 
                     <figure style="margin: auto; display: block; margin-left: auto; margin-right: auto; width:70%;">
-                        <img src="/static/images/pwa_and_webapps.png" class="img-fluid">
+                        <img src="/static/images/pwa_and_webapps.png" class="img-fluid" alt="Diagrams showing the difference in the architecture of PWAs and Web Applications">
                         <figcaption style="font-size: 12px; color: grey">Diagram showing the difference between PWAs and
                             Web Applications.
                         </figcaption>
                     </figure>
+
+                    <br>
+                    <h5>The Advantages of PWAs</h5>
+                    <p>
+                    <ul>
+                        <li>
+                            PWAs follow the progressive enhancement strategy, which refers to a web development strategy that ensures
+                            that all users gain access to the core functionalities, with only compatible users being
+                            offered the enhanced version of the website. This means that PWAs are able to accessed for
+                            everyone regardless of their chosen browser.
+                        </li>
+                        <li>
+                            PWAs are designed to work offline, which contrasts with standard web applications and
+                            enhance the user experience.
+                        </li>
+                        <li>
+                            PWAs offer features that are traditionally only available to native applications.
+                            <ul>
+                                <li>These include features such as push notifications, full-screen mode, and
+                                    installation to the home screen.
+                                </li>
+                                <li>These features offer an app-like experience for users.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            PWAs are always up-to-date as they are web-based and do not require manual updates, with
+                            users getting the latest version when they access the application.
+                        </li>
+                    </ul>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="btn-toolbar" style="padding-left: 40vw; margin-top: 100px">
-        <button class="btn btn-success" style="text-align: center; left: 50%"><a href="{{ url_for("data_transfers") }}" style="color: white; text-decoration: none;">➡️ Data Transfers on the Internet</a></button>
+        <button class="btn btn-success" style="text-align: center; left: 50%"><a href="{{ url_for("data_transfers") }}"
+                                                                                 style="color: white; text-decoration: none;">➡️
+            Data Transfers on the Internet</a></button>
     </div>
 
 {% endblock %}

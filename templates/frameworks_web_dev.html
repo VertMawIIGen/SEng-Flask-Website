@@ -16,7 +16,7 @@
             </div>
 
             <div class="col-12" style="padding-left: 20vw;">
-                <h2 style="padding-bottom: 2vh;">Designing and Developing Web Applications</h2>
+                <h2 style="padding-bottom: 2vh;">5. Designing and Developing Web Applications</h2>
                 <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
                      class="scrollspy-example" tabindex="0">
                     <p>There are many aspects of designing and developing web applications, with small things such as
@@ -27,7 +27,8 @@
                     <h4 id="title1" class="title">Browser Developer Tools</h4>
                     <p>
                         Virtually any browser that one uses (be it Chrome, Firefox, Edge, etc.) has the option to show a
-                        tool menu called the developer tools. The Developer Tools menu within all browsers allows
+                        tool menu called the developer tools. The <strong>Developer Tools menu</strong> within all
+                        browsers allows
                         programmers to view the underlying structure of the webpage (by showing the Document Object
                         Model) and also allows them to modify code to view changes in real-time. Developer tools also
                         allow programmers to inspect and debug code, making it an overall an essential tool for web
@@ -37,7 +38,7 @@
                         developer tools should:
                     <ul>
                         <li>
-                            Contain a way to inspect the DOM and CSS of the current webpage:
+                            <strong>Contain a way to inspect the DOM and CSS of the current webpage:</strong>
                             <ul>
                                 <li>
                                     Developer tools allow you to inspect and modify (though not permanently) the HTML
@@ -57,7 +58,7 @@
                             </ul>
                         </li>
                         <li>
-                            View and utilize the Javascript console and debugger:
+                            <strong>Allow programmers to view and utilize the Javascript console and debugger:</strong>
                             <ul>
                                 <li>
                                     The Javascript console within the developer tools enables developers to debug the
@@ -79,29 +80,29 @@
                             </ul>
                         </li>
                         <li>
-                            View a network monitor:
+                            <strong> Allow programmers to view a network monitor:</strong>
                             <ul>
                                 <li>
                                     The network monitor allows developers to analyze network requests and show all
                                     resources that are being downloaded or uploaded by the website. The network monitor
                                     shows how long each resource takes to download and the details of each resource,
                                     such that developers are capable of optimizing website performance and determining
-                                    any bottlenecks that exist within the website. <br><br>
+                                    any bottlenecks that exist within the website. <br>
                                     Additionally, the network tab also allows developers to throttle the speed of
-                                    internet, in order to mimick the experience of users with low internet speeds,
+                                    internet, in order to mimic the experience of users with low internet speeds,
                                     further allowing them to identify bottlenecks that contribute to slow loading and
                                     optimize their website to accommodate for slower internet speeds.
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            View the performance statistics of a website
+                            <strong>Allow programmers to view the performance statistics of a website</strong>
                             <ul>
                                 <li>
                                     Performance tools detail how the page performs while running, showing metrics such
                                     as frames per second, and the time it takes to run certain process to give a general
                                     overview of how the webpage performs when it is running, as opposed to when it is
-                                    loading. <br><br>
+                                    loading. <br>
                                     Additionally, developer tools in the Chrome browser allows developers to the
                                     throttle the performance of their CPU in order to mimic the operation of the system
                                     for mobile devices, further helping identify bottlenecks and helping optimize the
@@ -144,11 +145,14 @@
                             <div id="collapseOne" class="accordion-collapse collapse show"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    Rendering Engines are a core part of the browser that transforms HTML, CSS and other
+                                    <strong>Rendering Engines</strong> are a core part of the browser that transforms
+                                    HTML, CSS and other
                                     files into their visual representations that users see on the screen. It is
                                     responsible for interpretation of the code that developers write, and since not all
-                                    browsers have the same rendering engine (for example, Firefox has Gecko, Safari has
-                                    WebKit) it is essential that developers account for the nuances within each engine,
+                                    browsers have the same rendering engine (for example, Firefox has <em>Gecko</em>,
+                                    Safari has
+                                    <em>WebKit</em>) it is essential that developers account for the nuances within each
+                                    engine,
                                     such that the website loads correctly regardless of the user’s platform. <br><br>
                                     This can be done through the testing and debugging of the website across multiple
                                     browsers in order to find and resolve issues regarding rendering, or by checking
@@ -174,7 +178,8 @@
                                     SpiderMonkey compiling to an intermediate language first. <br>As a result,
                                     Javascript
                                     code that works on one browser may not necessarily work flawlessly on another,
-                                    meaning that developers would need to test their code on multiple platforms to
+                                    meaning that developers would need to <strong>test their code on multiple
+                                    platforms</strong> to
                                     ensure its compatibility.
                                 </div>
                             </div>
@@ -188,7 +193,7 @@
                         this process simpler, including:
                     <ul>
                         <li>
-                            Sticking to the Standards Imposed by the W3C
+                            <strong>Sticking to the Standards Imposed by the W3C</strong>
                             <ul>
                                 <li>
                                     Almost all commonly used web browsers adhere to standards outlined by the W3C and
@@ -199,12 +204,13 @@
                             </ul>
                         </li>
                         <li>
-                            Utilizing feature detection
+                            <strong>Utilizing feature detection</strong>
                             <ul>
                                 <li>
                                     Languages like CSS contain inbuilt features that can detect whether a browser
                                     has the capability to show or understand certain elements within code. For example,
-                                    CSS has an inbuilt function that allows developers to add a @supports rule in order
+                                    CSS has an inbuilt function that allows developers to add a <em>@supports</em> rule
+                                    in order
                                     to ensure compatibility with browsers, particularly older browsers, by allowing them
                                     to have alternative methods to render a particular element. <br><br>
                                     By utilizing these features, developers are able to stagnate the rollout of features
@@ -220,31 +226,79 @@
                     </p>
                     <h4 id="title3" class="title">Version Control</h4>
                     <p>
-                        Within software development, version control is a development method which allows programmers to
-                        maintain previous copies of their current software either within their own computer, or within a
-                        centralized server. With this, there are many benefits that stem from the usage of version
-                        control, such as the ability to trace back the development of the project.
-                        <br><br>
-                        Version control allows programmers to find older versions of code, alongside information such as
-                        the date, person responsible for the changes, and the reason for the alterations. Through this,
-                        the ability for programmers to detect bugs and software errors is enhanced, allowing them to
-                        analyze the origins and bugs and determine the correct rectification.
-                        <br><br>
-                        Version control also allows programmers to effectively collaborate with one another by making
-                        programmers aware of changes made to the repository by other programmers and prompting them to
-                        rectify their code to include the changes prior to committing their code to the repository. This
-                        process ensures that different individuals are capable of working on the same code
-                        simultaneously, which would increase productivity. Additionally, by having a centralized
-                        repository, programmers can have constant feedback on their code.
-
+                        Version control is the practice of tracking and managing changes to software code, made
+                        possible through the use of version control systems (VCS). Version control comes with several benefits,
+                        listed below:
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Feature / Advantage</th>
+                            <th scope="col">Explanation</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Enables Concurrent Work</td>
+                            <td>Version control systems allow multiple developers to work on the same project
+                                simultaneously without interfering with each other's changes. This collaborative
+                                environment is facilitated by mechanisms for merging changes, resolving conflicts, and
+                                tracking contributions, ensuring that the team can work efficiently and cohesively.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Maintains historical records</td>
+                            <td>VCS keep a comprehensive history of all modifications made to the files over
+                                time.
+                                Developers can access and review earlier versions, compare changes across different
+                                revisions, and revert to previous states if necessary, simplifying the process of
+                                debugging and making it easier to understand the code as it evolves over time.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Serves as a backup system</td>
+                            <td>By storing copies of the code on remote servers or in cloud storage, version control
+                                provides allows projects to be securely backed up. This protects the codebase against
+                                data loss caused
+                                by hardware failures, human errors, or catastrophic events, ensuring the integrity and
+                                continuity of the project.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Supports branching and merging</td>
+                            <td>Version control systems enable developers to create branches, which are separate lines
+                                of development. Branching allows for experimentation with new features, bug fixing, or
+                                implementing changes without disrupting the main codebase. Once the changes are tested
+                                and ready, branches can be merged back into the main branch.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Facilitates code reviews and feedback</td>
+                            <td>
+                                Version control provides a centralized platform for sharing code changes and conducting
+                                peer reviews. Reviewers can examine the modifications, offer feedback, suggest
+                                improvements, and ensure that the code meets quality standards before it is merged into
+                                the main branch.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ensures traceability and compliance</td>
+                            <td>Version control systems maintain a detailed audit trail of all changes, including who
+                                made them, when they were made, and the reasons behind them. This traceability is
+                                crucial for compliance with regulatory requirements and industry standards, providing
+                                transparency and accountability throughout the development process.
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                     </p>
                     <h4 id="title4" class="title">Code Libraries and Frameworks</h4>
                     <p>
                         Code libraries provide pre-written, modular, and reusable code that can be easily utilized in
                         order to speed up development and ensure the reliability and maintainability of an application.
-                        Code libraries have different types: namely frameworks, template engines and predesigned CSS
+                        Code libraries have different types: namely frameworks, template engines and pre-designed CSS
                         classes, all of which follow the same concept but are designed for different applications.
                         <br><br>
+                    </p>
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -256,7 +310,8 @@
                             <div id="collapseOne" class="accordion-collapse collapse show"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    Frameworks, such as Flask, is a set of prewritten code that serves as the structure
+                                    <strong>Frameworks</strong>, such as Flask, are a set of pre-written code that serve
+                                    as the structure
                                     on which the code can be incorporated in order to create a new web application.
                                     Frameworks act as modifiable templates that allow programmers to avoid writing
                                     commonly implemented functionality and instead focus on their own code for the
@@ -265,14 +320,17 @@
                                     <ul>
                                         <li>
                                             Frameworks allow developers to utilize code that have been previously
-                                            debugged and tested, ensuring the reliability of the specific functionality.
+                                            debugged and tested, ensuring the <strong>reliability</strong> of the
+                                            specific functionality.
                                         </li>
                                         <li>
-                                            Frameworks reduce the cost and time of producing a solution while preserving
+                                            Frameworks <strong>reduce the cost and time</strong> of producing a solution
+                                            while preserving
                                             the quality of the solution.
                                         </li>
                                         <li>
-                                            Frameworks likely contain best practices for development, which would
+                                            Frameworks likely contain <strong>best practices</strong> for development,
+                                            which would
                                             benefit the organization of the project.
                                         </li>
                                     </ul>
@@ -289,45 +347,52 @@
                             <div id="collapseTwo" class="accordion-collapse collapse"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    Template engines allow developers to dynamically generate HTML pages based on the
+                                    <strong>Template engines</strong> allow developers to <em>dynamically generate</em>
+                                    HTML pages based on the
                                     content and the HTML “template” that is provided to the template engine. In this
                                     way, the programmer would not have to manually change the HTML page every time new
                                     content is added, with them only needing to pass content into the template engine,
                                     which would then dynamically generate the required HTML page. <br><br>
-                                    Template engines like Jinja work by replacing variables in the template file with
-                                    the actual values provided in the content, also incorporating control structures,
-                                    such as loops, to make this process simpler and more extensible. The template engine
+                                    Template engines like Jinja work by <em>replacing variables</em> in the template
+                                    file with
+                                    the actual values provided in the content, also incorporating <em>control
+                                    structures</em>,
+                                    such as loops, to further make this process simpler and more extensible. The
+                                    template engine
                                     thus transforms the template file into an actual HTML file which is then sent to the
                                     user for their browser to render. <br><br>
-                                    The advantage with using template engines is that it promotes code organization by
+                                    The advantage with using template engines is that it <strong>promotes code
+                                    organization</strong> by
                                     separating the content from the code. In this way, the developer who works on the
                                     website does not need to worry about the content that another developer is working
                                     on, only needing to create a template that does not need to be continuously updated.
-                                    The separation of concerns and maintenance allows code to become more maintainable
-                                    and extensible over time.
+                                    The separation of concerns and maintenance allows code to become more <strong>maintainable
+                                    and extensible </strong>over time.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Predesigned CSS Classes
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                    Pre-designed CSS Classes
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    Predesigned CSS classes such as Bootstrap are collections of pre-made CSS files that
+                                    <strong>Pre-designed CSS classes</strong> such as Bootstrap are collections of
+                                    pre-made CSS files that
                                     offer reusable code for common elements of a webpage, such as for buttons, grids and
                                     navigation menus. It does this by providing predefined CSS classes that allow
-                                    programmers to simply reference and utilize specific styling, so as to minimize or
-                                    eliminate the need for the programmer to code create his own CSS. Predesigned CSS
+                                    programmers to simply reference and utilize specific styling, to minimize or
+                                    eliminate the need for the programmer to code create his own CSS. Pre-designed CSS
                                     classes also allow for websites to become more responsive, meaning that users on
                                     different devices would still be capable of utilizing the website, thereby making it
                                     more accessible. <br><br>
 
-                                    Excluding clear advantages associated with cost and time, predesigned CSS classes:
+                                    Excluding clear advantages associated with cost and time, pre-designed CSS classes:
                                     <ul>
                                         <li>
                                             Ensures that CSS works for multiple browsers as they are most likely
@@ -348,20 +413,18 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="btn-toolbar" style="padding-left: 40vw; margin-top: 100px">
+            <button class="btn btn-success" style="text-align: center; left: 50%; margin-right: 20px;"><a
+                    href="{{ url_for("big_data_accessibility") }}"
+                    style="color: white; text-decoration: none;">⬅️
+                Big Data and Accessibility</a></button>
+
+        </div>
     </div>
-
-    <div class="btn-toolbar" style="padding-left: 40vw; margin-top: 100px">
-        <button class="btn btn-success" style="text-align: center; left: 50%; margin-right: 20px;"><a
-                href="{{ url_for("big_data_accessibility") }}"
-                style="color: white; text-decoration: none;">⬅️
-            Big Data and Accessibility</a></button>
-
-    </div>
-
 {% endblock %}

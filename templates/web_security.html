@@ -17,7 +17,7 @@
             </div>
 
             <div class="col-12" style="padding-left: 20vw;">
-                <h2 style="padding-bottom: 2vh;">Explain the processes for securing the web</h2>
+                <h2 style="padding-bottom: 2vh;">3. Explain the processes for securing the web</h2>
                 <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
                      class="scrollspy-example" tabindex="0">
                     <p>Before the proliferation of the internet, data was transmitted in its raw and unencrypted form
@@ -30,23 +30,32 @@
                     </p>
                     <h4 id="title1" class="title">What is encryption?</h4>
                     <p>
-                        Encryption is the process of altering data into a form that can only be read by the intended
-                        individuals. The way that this does this is by using encryption algorithms to encrypt plaintext
-                        into ciphertext, which can then be decrypted with the corresponding key such that it can be
-                        reread. Plaintext refers to unmodified data that can be read directly by devices or humans
-                        without the need to decrypt. In the form of ciphertext, the original data cannot be meaningfully
+                        <strong>Encryption</strong> is the process of altering data into a form that can only be read by
+                        the intended
+                        individuals. The way that this does this is by using <strong>encryption algorithms</strong> to
+                        encrypt <em>plaintext</em>
+                        into <em>ciphertext</em>, which can then be decrypted with the corresponding <em>key</em> such
+                        that it can be
+                        reread. <strong>Plaintext</strong> refers to unmodified data that can be read directly by
+                        devices or humans
+                        without the need to decrypt. In the form of <strong>ciphertext</strong>, the original data
+                        cannot be meaningfully
                         derived without the use of the encryption key, hence meaning that ciphertext is the encrypted
-                        form of plaintext. The usage of ciphertext over plaintext ensures that sensitive data remains
-                        secure even during transmission and storage, allowing privacy and security to be maintained in
+                        form of plaintext. The usage of ciphertext over plaintext ensures that <em>sensitive data
+                        remains
+                        secure</em> even during transmission and storage, allowing privacy and security to be maintained
+                        in
                         the vast scope of the internet.
 
                         <br> <br>
 
-                        But what exactly is an encryption key? An encryption key is a string of characters or numbers
+                        But what exactly is an encryption key? An <strong>encryption key</strong> is a string of
+                        characters or numbers
                         that is used by encryption algorithms to encrypt and decrypt data in a way that is unique to the
                         specific string, meaning that users require the same exact string in order to correctly read
                         encrypted data. In today’s internet, the security of data is no longer determined by the
-                        encryption algorithms themselves, but rather on the security of the key itself. Without the
+                        encryption algorithms themselves, but rather on the <em>security of the key itself</em>. Without
+                        the
                         proper security of the key, hackers would be able to gain access to the data even if the
                         encryption method is foolproof.
 
@@ -54,19 +63,21 @@
 
                         Therefore, keys should be stored securely and be protected in both volatile and persistent
                         memory and processed in secure modules dedicated to cryptography. Most likely, devices would
-                        store their private keys within cryptographic vaults, such as Hardware Security Modules, which
+                        store their private keys within cryptographic vaults, such as <strong>Hardware Security
+                        Modules</strong>, which
                         are standalone devices whose purpose is solely to manage keys and perform cryptographic
                         functions. Through HSMs, the encryption key would exist within a dedicated secure environment
                         that cannot be accessed directly from the device itself. Rather, the device would need to query
                         the HSM for all things related to encryption, and the module would return the answer to the
-                        queries, such as for encryption, without ever revealing the key to the device. In addition to
+                        queries, such as for encryption, without revealing the key to the device. In addition to
                         HSMs, keys should be changed regularly and safely deleted if outdated, and only ever shared in
                         encrypted form.
 
 
                     <h4 id="title2" class="title">Encryption Algorithms</h4>
-                    <p>Of course, the key is useless if there is no encryption algorithm to use it with. The encryption
-                        algorithm is a method that is used to convert plaintext into ciphertext and back into plaintext.
+                    <p>Of course, the key is useless if there is no encryption algorithm to use it with. The <strong>encryption
+                        algorithm</strong> is a method that is used to convert plaintext into ciphertext and back into
+                        plaintext.
                         The algorithm utilizes mathematical algorithms to map data to its scrambled form using the key,
                         thus allowing for the decryption of ciphertext. There are many common encryption algorithms,
                         such as RSA and AES, both of which differ as there are actually 2 types of encryption
@@ -74,7 +85,8 @@
 
                     <h5>Symmetric Encryption and Asymmetric encryption</h5>
                     <p>
-                        Symmetric encryption algorithms refers to encryption algorithms that use the same key for both
+                        <strong>Symmetric encryption algorithms</strong> refer to encryption algorithms that use the
+                        same key for both
                         the encryption and decryption process.
                         This contrasts with asymmetric encryption, which uses two distinct keys, known as a private and
                         public key, for its process of encryption and decryption.
@@ -85,37 +97,47 @@
                         more devices, as they both know the same information that they use to communicate with one
                         another. The problem with symmetric encryption arises from this shared secret, with the
                         challenge being the method used to relay this shared secret to the other device, such that
-                        symmetric encryption can take place. If done incorrectly, malicious individuals would be able to
+                        symmetric encryption can take place. If done incorrectly, malicious actors would be able to
                         intercept the key during its transmission, allowing them to decrypt all messages between the two
                         devices and thus removing the security of the connection. However, compared to asymmetric
                         encryption, symmetric encryption is faster and allows for more efficient connections between
                         devices on the internet. Though ultimately, it is more suited to applications such as encrypting
                         files in storage or databases.<br><br>
 
-                        Contrastingly, in asymmetric encryption, the algorithm uses two keys for the decryption and
-                        encryption of data. These two keys are called private and public keys, and it is through
+                        Contrastingly, in <strong>asymmetric encryption</strong>, the algorithm uses two keys for the
+                        decryption and
+                        encryption of data. These two keys are called <strong>private</strong> and <strong>public
+                        keys</strong>, and it is through
                         asymmetric encryption that internet conversations can be done, even through an insecure channel,
-                        without the message being able to be decrypted. Private keys are only used for the encryption of
-                        data, and private keys are only used for the decryption of data encrypted using the public key.
-                        The way that asymmetric encryption works is by openly disclosing the public key, which is fine,
-                        as it is only used for encryption, and therefore does not reveal anything about the data. Other
+                        without the message being able to be decrypted. Public keys are only used for the <em>encryption
+                        of
+                        data</em>, and private keys are only used for the decryption of data encrypted using the public
+                        key.
+                        The way that asymmetric encryption works is by openly disclosing the public key, which is not
+                        compromising,
+                        as it is only used for encryption, and therefore does not reveal anything about the method of
+                        decryption. Other
                         devices can use this public key to encrypt the data that it intends to send to the device. Using
                         the private key, this data can then be read by the intended device, and because the private key
                         is never shared and always kept secure within the device, it would be computationally unfeasible
-                        for third parties to decrypt the data, ensuing the security of data.
+                        for third parties to decrypt the data, ensuring the security of data.
 
                         <br><br>
 
-                        However, the obvious disadvantage with this method is that it is more computationally intensive
-                        compared to symmetric encryption, making it slower and less suited to applications that require
-                        both security and speed. Thus, the modern internet uses a combination of both symmetric and
-                        asymmetric encryption, incorporated in a method called Transport Layer Security (or more
+                        However, the obvious disadvantage with this method is that it is more <em>computationally
+                        intensive</em>
+                        compared to symmetric encryption, making it <em>slower</em> and less suited to applications that
+                        require
+                        both <em>security and speed</em>. Thus, the modern internet uses a combination of both symmetric
+                        and
+                        asymmetric encryption, incorporated in a method called <strong>Transport Layer Security</strong>
+                        (or more
                         commonly known as Secure Socket Layer).
                         <br><br>
                         To recap: <br><br>
                     </p>
                     <figure style="margin: auto; display: block; margin-left: auto; margin-right: auto; width:70%;">
-                        <img src="/static/images/encryption_algorithms.png" class="img-fluid">
+                        <img src="/static/images/encryption_algorithms.png" class="img-fluid" alt="Table showing the characteristics of both symmetric and asymmetric cryptography">
                         <figcaption style="font-size: 12px; color: grey">Table showing the main points regarding the two
                             classes of encryption algorithms.
                         </figcaption>
@@ -123,7 +145,8 @@
                     <br>
                     <h4 id="title3" class="title">Secure Socket Layer / Transport Layer Security (SSL/TLS)</h4>
                     <p>
-                        Secure Socket Layer (SSL) or Transport Layer Security (TLS) is one of the main protocols used in
+                        <strong>Secure Socket Layer (SSL)</strong> or <strong>Transport Layer Security (TLS)</strong> is
+                        one of the main protocols used in
                         internet communications, with it being an encryption-based internet security protocol. SSL/TLS
                         has a role in ensuring the genuineness of the server that the browser is trying to connect to
                         and facilitating the encryption connection between the server and the browser through the use of
@@ -165,40 +188,48 @@
 
                     <div class="alert alert-success" role="alert">
                         <h4 class="alert-heading">To note:</h4>
-                        <p>There is a difference between authentication and authorization.
+                        <p>There is a difference between <strong>authentication</strong> and
+                            <strong>authorization</strong>.
                             <br><br>
-                            Authentication is the process of verifying the identity of a user or entity, in order to
+                            <strong>Authentication</strong> is the process of verifying the identity of a user or
+                            entity, in order to
                             ensure that the person attempting to access the system is the correct person, and not a
                             malicious individual pretending to be the real user, be it through the use of passwords,
                             multifactor authentication, or biometrics.
 
                             <br><br>
-                            Authorization is the process of ensuring that an already authenticated user has the ability
+                            <strong>Authorization</strong> is the process of ensuring that an <strong>already
+                                authenticated user</strong> has the ability
                             to perform a specific action or view a specific resource within the web server.
-                            Authorization always follows authentication, and it is the way that servers limit user’s
+                            Authorization <em>always</em> follows authentication, and it is the way that servers limit
+                            user’s
                             access to sensitive data and prevents unauthorized actions.
                         </p>
                         <hr>
-                        <p class="mb-0">So to recap, authentication verifies identity, authorization verifies
-                            permissions.</p>
+                        <p class="mb-0">So to recap, <strong>authentication verifies identity</strong>, <strong>authorization
+                            verifies
+                            permissions</strong>.</p>
                     </div>
 
                     <p>
                         The process involved in TLS is as follows: <br>
                     <ol>
-                        <li>The client first initiates the connection with the server using a “client hello,” which
+                        <li>The client first initiates the connection with the server using a <strong>“client
+                            hello,”</strong> which
                             contains information regarding the max TLS version, a random number and a list of cipher
                             suites.
                         </li>
-                        <li>The server then sends a “Server Hello” back to the client, which contains information on the
+                        <li>The server then sends a <strong>“Server Hello”</strong> back to the client, which contains
+                            information on the
                             chosen TLS version, the chosen cipher suite and a random number. The server also sends a
                             digital
                             certificate to prove its identity.
                         </li>
                         <li>
-                            The client and server then perform the server-key exchange, using asymmetric cryptography to
+                            The client and server then perform the <strong>server-key exchange</strong>, using <em>asymmetric
+                            cryptography</em> to
                             exchange keys in order to establish a symmetric encryption connection through the use of a
-                            session key.
+                            <strong>session key</strong>.
                         </li>
                         <li>
                             After keys are exchanged, the session key is used throughout the connection, allowing data
@@ -210,19 +241,31 @@
 
                     <h4 id="title4" class="title">Hash Values and Digital Signatures</h4>
                     <p>
-                        Digital signatures are part of the Public Key Infrastructure (PKI) system, which is a system
+                        <strong>Digital signatures</strong> are part of the Public Key Infrastructure (PKI) system,
+                        which is a system
                         that enables the use of Public Key Cryptography (also known as asymmetric cryptography). Digital
-                        signatures are comprised of the hash, encrypted by the Certificate Authority's Private Key and
-                        the Public Key of Certificate Authority. The hash is generated from the certificate document
-                        itself, and this verifies that the certificate has not been tampered with.
+                        signatures allows the receiver to verify that the sender is the one that sent the document as it
+                        involves the sender <em>encrypting a document with their private key</em>, and the recipient
+                        <em>decrypting
+                            it using the sender's public key</em>. This verifies that the sender is the one who sent the
+                        document
+                        as <em>only the private key</em> can be used to encrypt a document such that the <em>public key
+                        can decrypt
+                        it</em>. Digital signatures also ensure that the document was never altered, providing
+                        <strong>non-repudiation</strong> as it makes the sender unable to deny that they sent the
+                        document.
+
                         <br><br>
-                        A hash function is a one-way function that maps data of an arbitrary size to a fixed length set
-                        of values, known as a hash value. Hash functions verify the integrity of the document by
-                        allowing small changes to have a large impact on the hash value, making it evident if the data
-                        has been tampered with.
+
+                        A <strong>hash function</strong> is a one-way function that maps data of an arbitrary size to a
+                        fixed length set
+                        of values, known as a <strong>hash value</strong>. Hash functions verify the integrity of the
+                        document by
+                        allowing <em>small changes</em> to have a <em>large impact</em> on the hash value, making it
+                        evident if the data
+                        has been tampered with. Therefore, hash functions are most commonly used for data integrity
+                        verification, password hashing and digital signatures.
                         <br><br>
-                        Digital signatures and hash values are therefore essential for the security of the web through
-                        its significance in the TLS/SSL protocols.
                     </p>
                 </div>
             </div>
@@ -234,8 +277,9 @@
                 href="{{ url_for("data_transfers") }}"
                 style="color: white; text-decoration: none;">⬅️
             Data Transfers on the Internet</a></button>
-        <button class="btn btn-success" style="text-align: center; left: 50%"><a href="{{ url_for("big_data_accessibility") }}"
-                                                                                 style="color: white; text-decoration: none;">➡️
+        <button class="btn btn-success" style="text-align: center; left: 50%"><a
+                href="{{ url_for("big_data_accessibility") }}"
+                style="color: white; text-decoration: none;">➡️
             Big Data and Accessibility</a></button>
     </div>
 

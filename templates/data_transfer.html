@@ -16,33 +16,36 @@
             </div>
 
             <div class="col-12" style="padding-left: 20vw;">
-                <h2 style="padding-bottom: 2vh;">Investigate how data is transferred over the internet.</h2>
+                <h2 style="padding-bottom: 2vh;">2. Investigate how data is transferred over the internet.</h2>
                 <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
                      class="scrollspy-example" tabindex="0">
                     <p>You may not realize it, but on average, roughly one petabyte of data is actively being
                         transferred over the internet every second (that's about <em>one million gigabytes</em>). With
                         this much data, it is paramount that there is a way to ensure that data is being transferred
                         reliably, accurately and in a timely manner. But before we can worry about that, we also have to
-                        know where the data is even going. These are the jobs of data packets and IP addresses
+                        know where the data is <em>even going</em>. These are the jobs of data packets and IP addresses
                         respectively, and they are discussed right below.
                     </p>
                     <h4 id="title1" class="title">What are data packets?</h4>
-                    <p>A data packet is a small portion of data taken from a larger file that is transmitted from one
+                    <p>A <strong>data packet</strong> is a small portion of data taken from a larger file that is
+                        transmitted from one
                         device to another via a network,
-                        such as the internet. Data packets are used to break down large files into smaller, more
-                        manageable units that can be sent in any order and reassembled by the receiver's device at the
+                        such as the internet. Data packets are used to break down large files into <em>smaller, more
+                            manageable units </em>that can be sent in any order and reassembled by the receiver's device
+                        at the
                         destination,
-                        also known as the <em>endpoint</em>.
+                        also known as the <strong>endpoint</strong>.
                         Alongside the transported data (also known as the <strong>payload</strong>), most data transfer
-                        protocols also send a packet header, which
-                        contains metadata specifying the receiver's IP address, the protocol used to transfer the
+                        protocols also send a packet <strong>header</strong>, which
+                        contains metadata (refer to <a href={{ url_for("big_data_accessibility") }} style="color: black">the
+                        notes on Big Data</a>) specifying the receiver's IP address, the protocol used to transfer the
                         data, and other relevant information, such as the origin, content and destination of the data.
                         Sometimes, data packets also have a trailer that indicates the end of the packet and may contain
                         error checking data.
                         <br> <br>
 
                         While it is theoretically possible to transfer files as one continuous stream of data using a
-                        method called circuit switching, such a
+                        method called <em>circuit switching</em>, such a
                         solution is impractical in computer networks, which are groups of two or more connected
                         computers.
                         Without breaking down the files, computers within the network would need to take turns to
@@ -52,23 +55,26 @@
                         <br><br>
 
                         Therefore, data packets are used in order to allow
-                        multiple computers to simultaneously receive data by reducing the size of the data transferred
+                        <em>multiple</em> computers to <em>simultaneously</em> receive data by reducing the size of the
+                        data transferred
                         at one time and making each packet independent of one another such that data packets can take
                         different, more optimized routes to the endpoint, thereby making it faster and
-                        more efficient for the many devices on the internet. The way that this
+                        more efficient way for transfer data to the many devices on the internet. The way that this
                         can be achieved is by using a technique called <strong>packet switching</strong>.
 
                         <br> <br>
 
-                        Packet switching is a data transmission method in which a message is broken into a number of
+                        <strong>Packet switching</strong> is a data transmission method in which a message is broken
+                        into a number of
                         parts (which are the data packets), sent independently, over whatever route is optimum
                         for each packet, and then reassembled at the destination. In the context of the internet (which
                         is in
-                        essence a network of networks), packets travel through various network nodes, such as routers
+                        essence a network of networks), packets travel through various <em>network nodes</em>, such as
+                        routers
                         and switches, and arrives at its intended location.
 
                         <br><br>
-
+                    </p>
 
                     <div class="alert alert-success" role="alert">
                         <h4 class="alert-heading">To note:</h4>
@@ -86,7 +92,7 @@
                     packets of the same data can take different paths towards an endpoint, depending on what is optimal
                     for the data. Subsequently, this reduces the overall strain on network
                     infrastructure and hastens the
-                    data transfer process, as packets are able to be routed around congested networks, leading to a
+                    data transfer process, as packets are routed around congested networks, leading to a
                     more efficient usage of network resources. Packet switched networks also allow for multiple
                     devices to transfer
                     and use the network infrastructure, allowing the network nodes to facilitate connections with
@@ -97,7 +103,8 @@
 
                     Packet switching forms the basis of the modern data transfer model used in data transmissions today,
                     called
-                    the TCP/IP model. The Transmission Control Protocol is responsible for assembling the packets
+                    the <strong>TCP/IP model</strong>. The Transmission Control Protocol is responsible for assembling
+                    the packets
                     in
                     the right order and ensuring accuracy of transmission, and the Internet Protocol is responsible
                     for allowing communications to exist
@@ -153,23 +160,27 @@
                     </table>
 
                     <h4 id="title2" class="title">An Overview of the Common Web Protocols</h4>
-                    <p>Within the context of data transmission, protocols are standardized sets of rules that govern the
+                    <p>Within the context of data transmission, <strong>protocols</strong> are standardized sets of
+                        rules that govern the
                         exchange or transmission of data between devices. Protocols define how data packets are
                         formatted and processed, which ensures that different devices are able to successfully
                         communicate with one
-                        another within the internet, acting as a sort of universal language that allows devices of
-                        different hardware and software to still be able to communicate with one another despite their
-                        differences.
+                        another within the internet, acting as a sort of <em>universal language</em> that allows devices
+                        of
+                        different hardware and software to still be able to communicate with one another.
 
                         <br><br>
 
-                        Without protocols, computers would have different expectations for the format of data because of
+                        Without protocols, different computers would have differing expectations for the format of data
+                        because of
                         the lack of standardization, which would limit the ability for devices to communicate. Protocols
                         are
-                        also responsible for maintaining the integrity, security and consistency of data transfers as
-                        they also define how data addressed, routed, transmitted and
+                        also responsible for maintaining the <em>integrity, security and consistency</em> of data
+                        transfers as
+                        they also define how data is addressed, routed, transmitted and
                         received. They also have rules on how to detect and correct
-                        errors, with some protocols adding a checksum, which is a sequence of numbers and letters that
+                        errors, with some protocols adding a <strong>checksum</strong>, which is a sequence of numbers
+                        and letters that
                         is derived from the payload, within the header to verify the
                         integrity of the packet when it is received.
 
@@ -184,7 +195,7 @@
                         <br><br>
 
                     <figure style="margin: auto; display: block; margin-left: auto; margin-right: auto; width:70%;">
-                        <img src="/static/images/TCP-IP-Model-Architecture.png" class="img-fluid">
+                        <img src="/static/images/TCP-IP-Model-Architecture.png" class="img-fluid" alt="A diagram showing the different layers that make up the TCP/IP stack.">
                         <figcaption style="font-size: 12px; color: grey">A visual representation of the TCP/IP stack.
                         </figcaption>
                     </figure>
@@ -209,20 +220,20 @@
                             <div id="collapseOne" class="accordion-collapse collapse show"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    The Hyper Text Transfer Protocol (Secure, if SSL is available) is a protocol used
+                                    The <strong>Hyper Text Transfer Protocol</strong> (Secure, if SSL is available) is a protocol used
                                     to encode and transport data between a web browser and a web server. The protocol is
                                     labeled as secure (HTTPS) if connection between the server and the device is
-                                    encrypted using SSL/TLS, which secures the code against unwanted receivers and
+                                    encrypted using <strong>SSL/TLS</strong>, which secures the code against unwanted receivers and
                                     individuals trying to modify the data being sent. <br><br>
 
-                                    Through HTTP, the browser can send a HTTP request to the server hosting the website.
+                                    Through HTTP, the browser can send an HTTP request to the server hosting the website.
                                     The HTTP request, which is made up of the HTTP method (GET, POST, PUT), the URL and
                                     other headers, is
-                                    sent to the server as a requeest. The servers then processes the request and sends a
+                                    sent to the server as a request. The servers then processes the request and sends a
                                     response towards the browser, which includes a status code that shows if the request
                                     was fulfilled, and any requested data. <br><br>
 
-                                    Typically, HTTP uses port 80, and HTTPS uses port 443.
+                                    Typically, HTTP uses <strong>port 80</strong>, and HTTPS uses <strong>port 443</strong>.
 
                                 </div>
                             </div>
@@ -237,20 +248,20 @@
                             <div id="collapseTwo" class="accordion-collapse collapse"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    The Transmission Control Protocol is a protocol that is used to handle data packets
+                                    The <strong>Transmission Control Protocol</strong> is a protocol that is used to handle data packets
                                     prior to sending or after receiving. It is used to handle the ordering of data
                                     packets, and check the integrity of the data packet after its transmission. The TCP
                                     is responsible for the breaking down of large files into data packets, which are
                                     then forwarded to the IP for sending.<br><br>
 
-                                    The Internet Protocol is the protocol that handles the transportation of data
+                                    The <strong>Internet Protocol</strong> is the protocol that handles the transportation of data
                                     packets. IP attaches IP information to packets of data within the header, payload
                                     and the footer,
                                     and thus provides the means for data to be transferred from one network node to
                                     another. IP does this mainly by providing a unique IP address for each device or
                                     server that the packets can subsequently be directed to.<br><br>
 
-                                    Generally, TCP and IP do not have set ports through which connections are
+                                    Generally, TCP and IP <strong>do not have set ports</strong> through which connections are
                                     established.
                                     </br>
                                 </div>
@@ -267,12 +278,12 @@
                             <div id="collapseThree" class="accordion-collapse collapse"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    The Domain Name System (DNS) is used to match up human-readable domain names with
+                                    The <strong>Domain Name System (DNS)</strong> is used to match up human-readable domain names with
                                     the IP
                                     addresses of the servers to simplify the process of connecting and retrieving
                                     information from a specific known server. <br><br>
 
-                                    DNS uses port 53.
+                                    DNS uses <strong>port 53</strong>.
                                 </div>
                             </div>
                         </div>
@@ -287,7 +298,7 @@
                             <div id="collapseFour" class="accordion-collapse collapse"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    File Transfer Protocol (FTP) is a protocol used to transfer files between devices on
+                                    <strong>File Transfer Protocol (FTP)</strong> is a protocol used to transfer files between devices on
                                     a TCP/IP network, such as the internet. Commonly it is used to transfer files from a
                                     server to a computer. <br><br>
 
@@ -296,11 +307,11 @@
                                     connection is used to send information regarding commands and user data, and the
                                     data connection is used to transfer the actual data between the two devices.
 
-                                    Secure File Transfer Protocol (SFTP) is an extension of the FTP protocol, as it
+                                    <strong>Secure File Transfer Protocol (SFTP)</strong> is an extension of the FTP protocol, as it
                                     protects the encrypts the data being transferred using Secure Shell Encryption to
                                     provide a layer of security during file transfers.<br><br>
 
-                                    FTP typically uses port 20 and 21, and SFTP typically uses port 22.
+                                    FTP typically uses <strong>port 20 and 21</strong>, and SFTP typically uses <strong>port 22</strong>.
                                 </div>
                             </div>
                         </div>
@@ -315,14 +326,15 @@
                             <div id="collapseFive" class="accordion-collapse collapse"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    Secure Socket Layer (now obsolete and replaced by Transport Layer Security, though
+                                    <strong>Secure Socket Layer</strong> (now obsolete and replaced by Transport Layer Security, though
                                     the name remains) is a protocol used to facilitate the encryption connection between
                                     a device and a server through the utilization of asymmetric encryption to exchange
-                                    keys and allow for symmetric encryption to occur. SSL / TLS is also used to verify
+                                    keys and allow for symmetric encryption to occur. <br>
+                                    SSL/TLS is also used to verify
                                     the identity of the server prior to the device connecting to it by observing the
                                     certificates that the website presents.<br><br>
 
-                                    SSL/TLS does not have specific ports through which they communicate with.
+                                    SSL/TLS <strong>does not have specific ports</strong> through which they communicate with.
                                 </div>
                             </div>
                         </div>
@@ -336,18 +348,18 @@
                             <div id="collapseSix" class="accordion-collapse collapse"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    Simple Mail Transfer Protocol (SMTP) is a set of rules that standardize the process
-                                    of sending emails. Notably, SMTP is only responsible for the sending of Emails
-                                    towards the mail server, and other
+                                    <strong>Simple Mail Transfer Protocol (SMTP)</strong> is a set of rules that standardize the process
+                                    of sending emails. Notably, SMTP is only responsible for the <em>sending of Emails
+                                    towards the mail server</em>, and other
                                     protocols are needed to retrieve the emails from the web server, with examples being
                                     the Post Office Protocol 3 and Internet Message Access Protocol are used to deliver
-                                    the mail from the web server to the user's email client.<br><br>
+                                    the mail from the <em>mail server</em> to the <em>user's email client</em>.<br><br>
 
                                     All three of these protocols utilize TCP to operate and send data.<br><br>
 
-                                    SMTP runs on ports 25, 465 an 587.<br>
-                                    POP 3 runs on ports 110 and 995.<br>
-                                    IMAP runs on ports 143 and 993.<br>
+                                    SMTP runs on <strong>ports 25, 465 and 587</strong>.<br>
+                                    POP 3 runs on <strong>ports 110 and 995</strong>.<br>
+                                    IMAP runs on <strong>ports 143 and 993</strong>.<br>
                                 </div>
                             </div>
                         </div>
@@ -356,42 +368,61 @@
                     <h4 id="title3" class="title">Internet Protocol</h4>
                     <p>The two main protocols that are of importance in today's internet are the Transmission Control
                         Protocol (TCP) and the Internet Protocol (IP). Both protocols work in conjunction with one
-                        another, hence the reason why they are commonly refered to as one unit: the TCP/IP
+                        another, hence the reason why they are commonly referred to as one unit: the TCP/IP
                         model. However, we are only going to be focusing on the Internet Protocol below.<br><br>
                     </p>
                     <h5>The IP protocol</h5>
                     <p>
-                        The Internet Protocol is a set of rules for the routing and addressing packets of data so that
+                        The <strong>Internet Protocol</strong> is a set of rules for the routing and addressing packets
+                        of data so that
                         they
                         can travel across networks and arrive at the correct destination. IP information is attached to
                         each packet, such that routers can decide the optimal route for the packet to get to its
-                        endpoint. The Internet Protocol is only responsible for the transport of data. Once the data
+                        endpoint. The Internet Protocol is only responsible for the <em>transport of data</em>. Once the
+                        data
                         arrives at
                         the endpoint, other protocols are responsible to send the information to the application itself,
                         such as TCP and UDP. <br><br>
 
-                        This IP information comes in the form of an IP address, which is a unique identifier assigned to
+                        This IP information comes in the form of an <strong>IP address</strong>, which is a unique
+                        identifier assigned to
                         each device that allows packets to be accurately directed to a device. IP addresses are series
-                        of characters
-                        (made up of 4 8-bit numbers in IPv4 separated by dots) that can either be 32 or 128 bits in
-                        length, depending on
-                        whether it
-                        follows the IPv4 or the IPv6 standard, the latter being the most recent.
+                        of characters that can either be 32 or 128 bits in length, depending on whether it follows the
+                        IPv4 or the IPv6 standard, the latter being the most recent.
+
                         <br><br>
-                        The reason behind the increase in the number of bits is because of the growing number of
-                        internet-connected devices. IPv4's limitation to 32 bits means that only around 4.3 billion
-                        unique addresses are possible with the standard. Thus, in order to future-proof the Internet
-                        Protocol, IPv6's increase to 128 bits means that there will be more than enough addresses to
-                        account for the continued growth of the Internet.<br><br>
+
+                        The <strong>IPv4</strong> standard consists of 4 decimal numbers separated by periods, each
+                        ranging from 0 to
+                        255. Each number represents an 8-bit binary string, meaning that the total number of bits would
+                        be 32. The diagram below illustrates this:
+                        <br><br>
+
+                    <figure style="margin: auto; display: block; margin-left: auto; margin-right: auto; width:70%;">
+                        <img src="/static/images/ipv4.png" class="img-fluid" alt="A diagram showing the components of the IPv4 address format">
+                        <figcaption style="font-size: 12px; color: grey">A visual diagram of the IPv4 Address format.
+                        </figcaption>
+                    </figure>
+                    <br>
+                    The reason behind the increase in the number of bits is because of the growing number of
+                    internet-connected devices. IPv4's limitation to 32 bits means that only around <em>4.3 billion</em>
+                    unique addresses are possible with the standard. Thus, in order to future-proof the Internet
+                    Protocol, IPv6's increase to 128 bits means that there will be more than enough addresses to
+                    account for the continued growth of the Internet.<br>
 
                     </p>
 
                     <h4 id="title4" class="title">Domain Name Systems</h4>
-                    <p>The Domain Name System is a method that translates human-readable domains names into IP
+                    <p>The <strong>Domain Name System</strong> is a system that translates human-readable domains names
+                        into IP
                         addresses, which are used by devices to figure out the address to which they should transmit
                         data. DNS is advantageous for normal users as it allows users to connect to websites using
                         easily-rememberable domain names, rather than IP addresses, making the internet more accessible
                         for normal users. <br><br>
+
+                        DNS operates as a distributed system, where multiple levels of serves work together efficiently
+                        in order to resolve domain names into IP addresses.
+                        <br><br>
 
                         In order for DNS to resolve domain names into IP addresses, DNS uses two distinct servers in
                         order to help in its DNS resolution:
@@ -451,7 +482,7 @@
                                             <th scope="row">Top-level domain (TLD) name servers</th>
                                             <td>The Top-level Domain name server is responsible for directing the
                                                 recursive nameserver to the appropriate domain that ends in the last
-                                                portion of the hostname (.com, .org, etc) that they are responsible for.
+                                                portion of the hostname (.com, .org, etc.) that they are responsible for.
                                                 For example, the ".com" TLD name server would direct recursive servers
                                                 to authoritative servers that have domains ending with ".com".
                                             </td>
@@ -459,7 +490,8 @@
                                         <tr>
                                             <th scope="row">Domain Name Servers<br></th>
                                             <td>
-                                                The Domain Name Server manages the zone with the full domain name, returning the IP address to the recursive server if the domains match.
+                                                The Domain Name Server manages the zone with the full domain name,
+                                                returning the IP address to the recursive server if the domains match.
                                             </td>
                                         </tr>
                                         </tbody>
@@ -474,8 +506,9 @@
     </div>
 
     <div class="btn-toolbar" style="padding-left: 40vw; margin-top: 100px">
-        <button class="btn btn-success" style="text-align: center; left: 50%; margin-right: 20px;"><a href="{{ url_for("web_programming") }}"
-                                                                                 style="color: white; text-decoration: none;">⬅️
+        <button class="btn btn-success" style="text-align: center; left: 50%; margin-right: 20px;"><a
+                href="{{ url_for("web_programming") }}"
+                style="color: white; text-decoration: none;">⬅️
             Applications of Web Programming</a></button>
         <button class="btn btn-success" style="text-align: center; left: 50%"><a href="{{ url_for("web_security") }}"
                                                                                  style="color: white; text-decoration: none;">➡️
