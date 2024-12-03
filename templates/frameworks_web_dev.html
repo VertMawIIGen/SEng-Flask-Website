@@ -1,5 +1,5 @@
 {% extends 'notes_base.html' %}
-{% block title %}Web Security | SEng Notes{% endblock %}
+{% block title %}Web Development | SEng Notes{% endblock %}
 
 {% block content %}
 
@@ -8,221 +8,348 @@
         <div class="row">
             <div class="col-2" style="position: fixed;">
                 <div id="list-example" class="list-group">
-                    <a class="list-group-item list-group-item-action" href="#title1">Overview of Encryption and Keys</a>
-                    <a class="list-group-item list-group-item-action" href="#title2">Types of Encryption Algorithms</a>
-                    <a class="list-group-item list-group-item-action" href="#title3">Secure Socket Layer</a>
-                    <a class="list-group-item list-group-item-action" href="#title4">Hash values and Digital
-                        Signatures</a>
+                    <a class="list-group-item list-group-item-action" href="#title1">Browser Developer Tools</a>
+                    <a class="list-group-item list-group-item-action" href="#title2">Other Browser Influences</a>
+                    <a class="list-group-item list-group-item-action" href="#title3">Version Control</a>
+                    <a class="list-group-item list-group-item-action" href="#title4">Code Libraries and Frameworks</a>
                 </div>
             </div>
 
             <div class="col-12" style="padding-left: 20vw;">
-                <h2 style="padding-bottom: 2vh;">Explain the processes for securing the web</h2>
+                <h2 style="padding-bottom: 2vh;">Designing and Developing Web Applications</h2>
                 <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
                      class="scrollspy-example" tabindex="0">
-                    <p>Before the proliferation of the internet, data was transmitted in its raw and unencrypted form
-                        called plaintext. In today’s world, this method of data transmission is unthinkable. All data,
-                        which may include sensitive information, would be able to be easily read by a monitoring third
-                        party, making transmission very insecure and prone to malicious modifications. Thus, as the
-                        internet grew, the need for a secure way to transfer data across the internet grew alongside it,
-                        forcing the development of protocols such as SSL and others. But before we can discuss that, we
-                        must first understand what encryption is.
+                    <p>There are many aspects of designing and developing web applications, with small things such as
+                        the browser developer tools and the IDE being capable of influencing the quality of work. There
+                        are many things that can help simplify the process of collaborating and developing application,
+                        such as the things listed below:
                     </p>
-                    <h4 id="title1" class="title">What is encryption?</h4>
+                    <h4 id="title1" class="title">Browser Developer Tools</h4>
                     <p>
-                        Encryption is the process of altering data into a form that can only be read by the intended
-                        individuals. The way that this does this is by using encryption algorithms to encrypt plaintext
-                        into ciphertext, which can then be decrypted with the corresponding key such that it can be
-                        reread. Plaintext refers to unmodified data that can be read directly by devices or humans
-                        without the need to decrypt. In the form of ciphertext, the original data cannot be meaningfully
-                        derived without the use of the encryption key, hence meaning that ciphertext is the encrypted
-                        form of plaintext. The usage of ciphertext over plaintext ensures that sensitive data remains
-                        secure even during transmission and storage, allowing privacy and security to be maintained in
-                        the vast scope of the internet.
+                        Virtually any browser that one uses (be it Chrome, Firefox, Edge, etc.) has the option to show a
+                        tool menu called the developer tools. The Developer Tools menu within all browsers allows
+                        programmers to view the underlying structure of the webpage (by showing the Document Object
+                        Model) and also allows them to modify code to view changes in real-time. Developer tools also
+                        allow programmers to inspect and debug code, making it an overall an essential tool for web
+                        developers. <br><br>
+                        There are different tabs within the developer tools, all of which show different things and have
+                        different functionalities. These are labeled differently in every browser, but each browser’s
+                        developer tools should:
+                    <ul>
+                        <li>
+                            Contain a way to inspect the DOM and CSS of the current webpage:
+                            <ul>
+                                <li>
+                                    Developer tools allow you to inspect and modify (though not permanently) the HTML
+                                    (represented as a DOM) and CSS of the website that is currently being displayed.
+                                    This allows developers to experiment with different styles and layouts, with changes
+                                    being applied in real-time. The developers can also experience the website’s changes
+                                    within the intended browser without needing to modify the actual code, thus
+                                    simplifying the
+                                    experimentation process and allowing developers to easily simulate the user’s
+                                    experience.
 
-                        <br> <br>
+                                    <br><br>
+                                    Additionally, inspecting the CSS within dev tools allows developers to find unused
+                                    and redundant CSS, allowing them to more easily find and remove redundancies.
 
-                        But what exactly is an encryption key? An encryption key is a string of characters or numbers
-                        that is used by encryption algorithms to encrypt and decrypt data in a way that is unique to the
-                        specific string, meaning that users require the same exact string in order to correctly read
-                        encrypted data. In today’s internet, the security of data is no longer determined by the
-                        encryption algorithms themselves, but rather on the security of the key itself. Without the
-                        proper security of the key, hackers would be able to gain access to the data even if the
-                        encryption method is foolproof.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            View and utilize the Javascript console and debugger:
+                            <ul>
+                                <li>
+                                    The Javascript console within the developer tools enables developers to debug the
+                                    Javascript code within the source code that is not working properly. The console
+                                    allows developers to run single or multiple lines of Javascript code against the
+                                    page that is currently loaded within the browser and outputs error messages for code
+                                    that fails to run. <br><br>
+                                    The Debugger feature allows developers to set breakpoints (stopping execution at a
+                                    certain line) and watch expressions (seeing what is contained in certain variables)
+                                    in order to better understand the execution of code in order to find and rectify
+                                    errors that it may contain. The debugger contains valuable information such as the
+                                    scope (which lists all the variables that a certain line can see) and the call stack
+                                    (which shows the code that was executed to get to the current line) which aid
+                                    developers in determining the cause of an error that they are encountering. <br><br>
+                                    Additionally, the Javascript debugger also allows developers to find unused
+                                    Javascript, allowing them to remove redundant code, which can help optimize the file
+                                    size.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            View a network monitor:
+                            <ul>
+                                <li>
+                                    The network monitor allows developers to analyze network requests and show all
+                                    resources that are being downloaded or uploaded by the website. The network monitor
+                                    shows how long each resource takes to download and the details of each resource,
+                                    such that developers are capable of optimizing website performance and determining
+                                    any bottlenecks that exist within the website. <br><br>
+                                    Additionally, the network tab also allows developers to throttle the speed of
+                                    internet, in order to mimick the experience of users with low internet speeds,
+                                    further allowing them to identify bottlenecks that contribute to slow loading and
+                                    optimize their website to accommodate for slower internet speeds.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            View the performance statistics of a website
+                            <ul>
+                                <li>
+                                    Performance tools detail how the page performs while running, showing metrics such
+                                    as frames per second, and the time it takes to run certain process to give a general
+                                    overview of how the webpage performs when it is running, as opposed to when it is
+                                    loading. <br><br>
+                                    Additionally, developer tools in the Chrome browser allows developers to the
+                                    throttle the performance of their CPU in order to mimic the operation of the system
+                                    for mobile devices, further helping identify bottlenecks and helping optimize the
+                                    website.
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Some browsers have an accessibility option in their developer tools, which allows
+                                    the developer to view all elements of the webpage that are related to assistive
+                                    technologies, such as for alternate text for images and the tabbing order of the
+                                    website. <br>
+                                    This helps them identify elements of the page that are not suitably easily
+                                    accessible for impaired individuals, which helps in improving the accessibility of
+                                    the webpage.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
 
-                        <br><br>
-
-                        Therefore, keys should be stored securely and be protected in both volatile and persistent
-                        memory and processed in secure modules dedicated to cryptography. Most likely, devices would
-                        store their private keys within cryptographic vaults, such as Hardware Security Modules, which
-                        are standalone devices whose purpose is solely to manage keys and perform cryptographic
-                        functions. Through HSMs, the encryption key would exist within a dedicated secure environment
-                        that cannot be accessed directly from the device itself. Rather, the device would need to query
-                        the HSM for all things related to encryption, and the module would return the answer to the
-                        queries, such as for encryption, without ever revealing the key to the device. In addition to
-                        HSMs, keys should be changed regularly and safely deleted if outdated, and only ever shared in
-                        encrypted form.
-
-
-                    <h4 id="title2" class="title">Encryption Algorithms</h4>
-                    <p>Of course, the key is useless if there is no encryption algorithm to use it with. The encryption
-                        algorithm is a method that is used to convert plaintext into ciphertext and back into plaintext.
-                        The algorithm utilizes mathematical algorithms to map data to its scrambled form using the key,
-                        thus allowing for the decryption of ciphertext. There are many common encryption algorithms,
-                        such as RSA and AES, both of which differ as there are actually 2 types of encryption
-                        algorithms: symmetric and asymmetric algorithms.
-
-                    <h5>Symmetric Encryption and Asymmetric encryption</h5>
-                    <p>
-                        Symmetric encryption algorithms refers to encryption algorithms that use the same key for both
-                        the encryption and decryption process.
-                        This contrasts with asymmetric encryption, which uses two distinct keys, known as a private and
-                        public key, for its process of encryption and decryption.
-                        <br><br>
-
-                        In symmetric encryption, the keys, as they are the same, represents a shared secret between two
-                        or
-                        more devices, as they both know the same information that they use to communicate with one
-                        another. The problem with symmetric encryption arises from this shared secret, with the
-                        challenge being the method used to relay this shared secret to the other device, such that
-                        symmetric encryption can take place. If done incorrectly, malicious individuals would be able to
-                        intercept the key during its transmission, allowing them to decrypt all messages between the two
-                        devices and thus removing the security of the connection. However, compared to asymmetric
-                        encryption, symmetric encryption is faster and allows for more efficient connections between
-                        devices on the internet. Though ultimately, it is more suited to applications such as encrypting
-                        files in storage or databases.<br><br>
-
-                        Contrastingly, in asymmetric encryption, the algorithm uses two keys for the decryption and
-                        encryption of data. These two keys are called private and public keys, and it is through
-                        asymmetric encryption that internet conversations can be done, even through an insecure channel,
-                        without the message being able to be decrypted. Private keys are only used for the encryption of
-                        data, and private keys are only used for the decryption of data encrypted using the public key.
-                        The way that asymmetric encryption works is by openly disclosing the public key, which is fine,
-                        as it is only used for encryption, and therefore does not reveal anything about the data. Other
-                        devices can use this public key to encrypt the data that it intends to send to the device. Using
-                        the private key, this data can then be read by the intended device, and because the private key
-                        is never shared and always kept secure within the device, it would be computationally unfeasible
-                        for third parties to decrypt the data, ensuing the security of data.
-
-                        <br><br>
-
-                        However, the obvious disadvantage with this method is that it is more computationally intensive
-                        compared to symmetric encryption, making it slower and less suited to applications that require
-                        both security and speed. Thus, the modern internet uses a combination of both symmetric and
-                        asymmetric encryption, incorporated in a method called Transport Layer Security (or more
-                        commonly known as Secure Socket Layer).
-                        <br><br>
-                        To recap: <br><br>
                     </p>
-                    <figure style="margin: auto; display: block; margin-left: auto; margin-right: auto; width:70%;">
-                        <img src="/static/images/encryption_algorithms.png" class="img-fluid">
-                        <figcaption style="font-size: 12px; color: grey">Table showing the main points regarding the two
-                            classes of encryption algorithms.
-                        </figcaption>
-                    </figure>
+
                     <br>
-                    <h4 id="title3" class="title">Secure Socket Layer / Transport Layer Security (SSL/TLS)</h4>
+                    <h4 id="title2" class="title">Other Notable Influences of the Browser</h4>
                     <p>
-                        Secure Socket Layer (SSL) or Transport Layer Security (TLS) is one of the main protocols used in
-                        internet communications, with it being an encryption-based internet security protocol. SSL/TLS
-                        has a role in ensuring the genuineness of the server that the browser is trying to connect to
-                        and facilitating the encryption connection between the server and the browser through the use of
-                        both symmetric and asymmetric encryption.
-
-                        <br><br>
-
-                        SSL/TLS checks the validity of the server through its collaboration with a Trusted Third Party
-                        called a Certificate Authority (CA). A CA is a trusted entity that issues digital certificates
-                        in the form of SSL/TLS certificates to authenticate the content sent from web servers and
-                        attests and vouches for the identity of a web server by using a digitally signed certificate.
-                        The CA can also manage, revoke and renew certificates for web servers.
-
-                        <br><br>
-
-                        The CA:
-                    <ul>
-                        <li>Issues, revokes and renews web certificates.</li>
-                        <li>Helps establish trust between communicating entities over the internet.</li>
-                        <li>Verified domain names and organizations to validate their identities.</li>
-                        <li>Maintains certificate revocation lists.</li>
-                    </ul>
-
-                    And the certificate typically contains:
-                    <ul>
-                        <li>Domain name in question.</li>
-                        <li>The identity of the business.</li>
-                        <li>The public key of the web server.</li>
-                        <li>The details of the CA that issued the certificate.</li>
-                        <li>The period of validity.</li>
-                        <li>The IP address of the device.</li>
-                        <li>A digital signature from the CA to prevent tampering.</li>
-                    </ul>
-
-                    Thus, in the process of TLS, the device would request for the SSL / TLS certificate to prove
-                    authenticity and ensure the security of the connection, and this would then allow the browser to
-                    proceed with the connection with the server as per TLS.
+                        Due to the existence of many browsers within the internet, when developing applications, it is
+                        important to consider that these browsers do not have the same underlying code. Different
+                        browsers can have differing implementations regarding how they approach certain core elements.
+                        Consequently, developers would need to ensure that the code that they write are compatible with
+                        the majority of these browsers, taking into account the following differences:
                     </p>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Rendering Engines
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Rendering Engines are a core part of the browser that transforms HTML, CSS and other
+                                    files into their visual representations that users see on the screen. It is
+                                    responsible for interpretation of the code that developers write, and since not all
+                                    browsers have the same rendering engine (for example, Firefox has Gecko, Safari has
+                                    WebKit) it is essential that developers account for the nuances within each engine,
+                                    such that the website loads correctly regardless of the user’s platform. <br><br>
+                                    This can be done through the testing and debugging of the website across multiple
+                                    browsers in order to find and resolve issues regarding rendering, or by checking
+                                    online resources that verify the compatibility of certain HTML elements prior to
+                                    implementation in the website.
 
-                    <div class="alert alert-success" role="alert">
-                        <h4 class="alert-heading">To note:</h4>
-                        <p>There is a difference between authentication and authorization.
-                            <br><br>
-                            Authentication is the process of verifying the identity of a user or entity, in order to
-                            ensure that the person attempting to access the system is the correct person, and not a
-                            malicious individual pretending to be the real user, be it through the use of passwords,
-                            multifactor authentication, or biometrics.
-
-                            <br><br>
-                            Authorization is the process of ensuring that an already authenticated user has the ability
-                            to perform a specific action or view a specific resource within the web server.
-                            Authorization always follows authentication, and it is the way that servers limit user’s
-                            access to sensitive data and prevents unauthorized actions.
-                        </p>
-                        <hr>
-                        <p class="mb-0">So to recap, authentication verifies identity, authorization verifies
-                            permissions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Javascript Engines
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Different websites have different implementations of the Javascript engine, such as
+                                    Google’s V8 and Firefox’s SpiderMonkey, which can have different behaviors due to
+                                    their different implementations, with V8 compiling straight to machine code and
+                                    SpiderMonkey compiling to an intermediate language first. <br>As a result,
+                                    Javascript
+                                    code that works on one browser may not necessarily work flawlessly on another,
+                                    meaning that developers would need to test their code on multiple platforms to
+                                    ensure its compatibility.
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
+                    <br>
                     <p>
-                        The process involved in TLS is as follows: <br>
-                    <ol>
-                        <li>The client first initiates the connection with the server using a “client hello,” which
-                            contains information regarding the max TLS version, a random number and a list of cipher
-                            suites.
-                        </li>
-                        <li>The server then sends a “Server Hello” back to the client, which contains information on the
-                            chosen TLS version, the chosen cipher suite and a random number. The server also sends a
-                            digital
-                            certificate to prove its identity.
+                        These two are the main points of different between browsers, and though it may seem daunting to
+                        have to take into account the nuances, there exists techniques that developers can use to make
+                        this process simpler, including:
+                    <ul>
+                        <li>
+                            Sticking to the Standards Imposed by the W3C
+                            <ul>
+                                <li>
+                                    Almost all commonly used web browsers adhere to standards outlined by the W3C and
+                                    other similar organizations which aim to standardize the implementation of HTML, CSS
+                                    and Javascript. This means that, by following the guidelines, developers would be
+                                    able to ensure that their code works for almost every browser.
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            The client and server then perform the server-key exchange, using asymmetric cryptography to
-                            exchange keys in order to establish a symmetric encryption connection through the use of a
-                            session key.
+                            Utilizing feature detection
+                            <ul>
+                                <li>
+                                    Languages like CSS contain inbuilt features that can detect whether a browser
+                                    has the capability to show or understand certain elements within code. For example,
+                                    CSS has an inbuilt function that allows developers to add a @supports rule in order
+                                    to ensure compatibility with browsers, particularly older browsers, by allowing them
+                                    to have alternative methods to render a particular element. <br><br>
+                                    By utilizing these features, developers are able to stagnate the rollout of features
+                                    that implement new technologies that may not be supported by all browsers in order
+                                    to ensure that older browsers are still able to access and use their website, in
+                                    line with a web design strategy called progressive enhancement, which is the idea
+                                    that everyone should have access to the bare content, and only compatible devices
+                                    should be shown the more enhanced version of the website.
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            After keys are exchanged, the session key is used throughout the connection, allowing data
-                            to be transferred securely.
-                        </li>
-                    </ol>
+                    </ul>
+                    </p>
+                    <h4 id="title3" class="title">Version Control</h4>
+                    <p>
+                        Within software development, version control is a development method which allows programmers to
+                        maintain previous copies of their current software either within their own computer, or within a
+                        centralized server. With this, there are many benefits that stem from the usage of version
+                        control, such as the ability to trace back the development of the project.
+                        <br><br>
+                        Version control allows programmers to find older versions of code, alongside information such as
+                        the date, person responsible for the changes, and the reason for the alterations. Through this,
+                        the ability for programmers to detect bugs and software errors is enhanced, allowing them to
+                        analyze the origins and bugs and determine the correct rectification.
+                        <br><br>
+                        Version control also allows programmers to effectively collaborate with one another by making
+                        programmers aware of changes made to the repository by other programmers and prompting them to
+                        rectify their code to include the changes prior to committing their code to the repository. This
+                        process ensures that different individuals are capable of working on the same code
+                        simultaneously, which would increase productivity. Additionally, by having a centralized
+                        repository, programmers can have constant feedback on their code.
 
                     </p>
-
-                    <h4 id="title4" class="title">Hash Values and Digital Signatures</h4>
+                    <h4 id="title4" class="title">Code Libraries and Frameworks</h4>
                     <p>
-                        Digital signatures are part of the Public Key Infrastructure (PKI) system, which is a system
-                        that enables the use of Public Key Cryptography (also known as asymmetric cryptography). Digital
-                        signatures are comprised of the hash, encrypted by the Certificate Authority's Private Key and
-                        the Public Key of Certificate Authority. The hash is generated from the certificate document
-                        itself, and this verifies that the certificate has not been tampered with.
+                        Code libraries provide pre-written, modular, and reusable code that can be easily utilized in
+                        order to speed up development and ensure the reliability and maintainability of an application.
+                        Code libraries have different types: namely frameworks, template engines and predesigned CSS
+                        classes, all of which follow the same concept but are designed for different applications.
                         <br><br>
-                        A hash function is a one-way function that maps data of an arbitrary size to a fixed length set
-                        of values, known as a hash value. Hash functions verify the integrity of the document by
-                        allowing small changes to have a large impact on the hash value, making it evident if the data
-                        has been tampered with.
-                        <br><br>
-                        Digital signatures and hash values are therefore essential for the security of the web through
-                        its significance in the TLS/SSL protocols.
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Frameworks
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Frameworks, such as Flask, is a set of prewritten code that serves as the structure
+                                    on which the code can be incorporated in order to create a new web application.
+                                    Frameworks act as modifiable templates that allow programmers to avoid writing
+                                    commonly implemented functionality and instead focus on their own code for the
+                                    application. <br><br>
+                                    The utilization of frameworks come with notable benefits:
+                                    <ul>
+                                        <li>
+                                            Frameworks allow developers to utilize code that have been previously
+                                            debugged and tested, ensuring the reliability of the specific functionality.
+                                        </li>
+                                        <li>
+                                            Frameworks reduce the cost and time of producing a solution while preserving
+                                            the quality of the solution.
+                                        </li>
+                                        <li>
+                                            Frameworks likely contain best practices for development, which would
+                                            benefit the organization of the project.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Template Engines
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Template engines allow developers to dynamically generate HTML pages based on the
+                                    content and the HTML “template” that is provided to the template engine. In this
+                                    way, the programmer would not have to manually change the HTML page every time new
+                                    content is added, with them only needing to pass content into the template engine,
+                                    which would then dynamically generate the required HTML page. <br><br>
+                                    Template engines like Jinja work by replacing variables in the template file with
+                                    the actual values provided in the content, also incorporating control structures,
+                                    such as loops, to make this process simpler and more extensible. The template engine
+                                    thus transforms the template file into an actual HTML file which is then sent to the
+                                    user for their browser to render. <br><br>
+                                    The advantage with using template engines is that it promotes code organization by
+                                    separating the content from the code. In this way, the developer who works on the
+                                    website does not need to worry about the content that another developer is working
+                                    on, only needing to create a template that does not need to be continuously updated.
+                                    The separation of concerns and maintenance allows code to become more maintainable
+                                    and extensible over time.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Predesigned CSS Classes
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Predesigned CSS classes such as Bootstrap are collections of pre-made CSS files that
+                                    offer reusable code for common elements of a webpage, such as for buttons, grids and
+                                    navigation menus. It does this by providing predefined CSS classes that allow
+                                    programmers to simply reference and utilize specific styling, so as to minimize or
+                                    eliminate the need for the programmer to code create his own CSS. Predesigned CSS
+                                    classes also allow for websites to become more responsive, meaning that users on
+                                    different devices would still be capable of utilizing the website, thereby making it
+                                    more accessible. <br><br>
+
+                                    Excluding clear advantages associated with cost and time, predesigned CSS classes:
+                                    <ul>
+                                        <li>
+                                            Ensures that CSS works for multiple browsers as they are most likely
+                                            pretested to work with a range of different platforms. They are also likely
+                                            to also be compatible with mobile devices, thus simplifying development.
+                                        </li>
+                                        <li>
+                                            Allows consistency between different pages within the website to be
+                                            maintained, particularly when multiple individuals are working on the
+                                            project.
+                                        </li>
+                                        <li>
+                                            Prioritize accessibility for people with disabilities, providing built-in
+                                            features and incorporating inclusive design such that disabled individuals
+                                            are able to navigate the website.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     </p>
                 </div>
             </div>
@@ -231,12 +358,10 @@
 
     <div class="btn-toolbar" style="padding-left: 40vw; margin-top: 100px">
         <button class="btn btn-success" style="text-align: center; left: 50%; margin-right: 20px;"><a
-                href="{{ url_for("web_programming") }}"
+                href="{{ url_for("big_data_accessibility") }}"
                 style="color: white; text-decoration: none;">⬅️
-            Applications of Web Programming</a></button>
-        <button class="btn btn-success" style="text-align: center; left: 50%"><a href="#"
-                                                                                 style="color: white; text-decoration: none;">➡️
-            Securing the Web</a></button>
+            Big Data and Accessibility</a></button>
+
     </div>
 
 {% endblock %}

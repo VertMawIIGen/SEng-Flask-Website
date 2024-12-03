@@ -349,3 +349,19 @@ form {
     padding-top: 2vh;
     padding-bottom: 2vh;
 }
+
+.link_anim {
+    text-decoration: none;
+    color: black;
+}
+
+.link_anim:hover {
+    color: darkslategray;
+    transition: 0.3s;
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+
+.link_anim:not(:hover) {
+    transition: 0.3s;
+}

@@ -27,7 +27,7 @@ login_manager.login_view = "login"
 
 all_questions = []
 with open("static/quizzes/quiztesting.csv") as f:
-    for row in csv.reader(f):
+    for row in csv.reader(f, delimiter=";"):
         all_questions.append(row)
 
 all_words = []
@@ -139,15 +139,16 @@ def firstquiz():
         session["questions_correct"] = []
 
     current_question = all_questions[question_index]
-    allOptions = [current_question[1], current_question[2], current_question[3], current_question[4]]
+    allOptions = current_question[1:-1]
 
     if request.method == "POST":
         selected_answer = int(request.form.get("answer"))
         user_answer = chr(selected_answer + 65)
+        print(user_answer, current_question[-1])
         session["question_index"] = question_index + 1
-        if user_answer != current_question[5]:
+        if user_answer != current_question[-1]:
             session["questions_correct"].append(False)
-            return render_template("feedback.html", feedback=f"Correct Answer is {current_question[5]}")
+            return render_template("feedback.html", feedback=f"Correct Answer is {current_question[-1]}")
         else:
             session["score"] += 1
             session["questions_correct"].append(True)
@@ -164,7 +165,7 @@ def results():
     print(session["questions_correct"])
     correct_questions = session["questions_correct"]
     session["questions_correct"] = []
-    return render_template("quiz_results.html", score=current_score, corrects=correct_questions)
+    return render_template("quiz_results.html", score=current_score, corrects=correct_questions, num_questions=len(all_questions) - 1)
 
 @app.route("/web_programming")
 @login_required
