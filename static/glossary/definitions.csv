@@ -30,7 +30,7 @@ Unstructured data;Unstructured data refers to disorganized data that contains no
 Data mining;Data mining is the process of sorting through large data sets to identify hidden patterns and relationships that can be used by businesses to make informed decisions and predictions.
 Metadata;Metadata is data that describes other data.
 Internationalization;Internationalization refers to the designing of web application to function in different languages and cultural contexts.
-Cross Site Scripting; Cross Site Scripting is an attack that uses the web server in order to relay the attacker’s commands, allowing them to execute malicious code if the victim visits a link containing the hacker’s code, or visits a resource in the webpage which the attacker has infected.
+Cross Site Scripting;Cross Site Scripting is an attack that uses the web server in order to relay malicious commands, allowing attacks to execute malicious code if the victim visits infected link or clicks on an infected portion of a website.
 Cross-site Request Forgery (CSRF);Cross-site Request Forgery (CSRF) is an exploit technique that involves deceiving an authenticated user to perform an unwanted action on a trusted site, exploiting their current authenticated state to perform actions that require the user to authenticate themselves prior to doing the action.
 Interoperability;Interoperability between web applications refers to the ability for web applications to work together with other systems or applications.
 Version Control;Version control is the practice of tracking and managing changes to software code, made possible through the use of version control systems (VCS).
